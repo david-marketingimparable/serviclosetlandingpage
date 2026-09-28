@@ -17,3 +17,5 @@
 .whatsapp-float:hover{background:#1F72A6;transform:translateY(-2px)}
 .whatsapp-float svg{width:22px;height:22px;fill:currentColor;flex:none}
 @media(max-width:520px){.whatsapp-float{right:15px;bottom:15px;padding:12px 15px;font-size:12px}.whatsapp-float svg{width:20px;height:20px}}
+/* Dato de confianza dentro del Hero */
+.hero-proof{display:flex;align-items:center;border-left:3px solid var(--navy);padding:2px 0 2px 13px;margin:-7px 0 24px;max-width:100%}.hero-proof div{display:flex;flex-direction:column;gap:3px;min-width:0}.hero-proof strong{font-size:14px;line-height:1.45;font-weight:700;color:var(--navy)}.hero-proof span{font-size:11px;line-height:1.5;color:#737B83}@media(max-width:820px){.hero-proof{margin:-7px 0 23px}}@media(max-width:520px){.hero-proof{padding-left:12px}.hero-proof strong{font-size:13px}.hero-proof span{font-size:11px}}
