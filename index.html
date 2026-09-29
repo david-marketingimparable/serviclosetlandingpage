@@ -158,9 +158,6 @@
         <label>Correo electrónico
           <input name="correo" id="lead-email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
         </label>
-        <label>Confirmar correo electrónico
-          <input name="confirmar-correo" id="lead-email-confirm" type="email" autocomplete="email" placeholder="Confirma tu correo" required>
-        </label>
         <label>Número de celular
           <input name="celular" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10 dígitos" pattern="[0-9]{10}" minlength="10" maxlength="10" title="Ingresa un número de celular de 10 dígitos, solo números." required>
         </label>
@@ -230,18 +227,12 @@
       const nameInput = form.elements.namedItem("nombre");
       const phoneInput = form.elements.namedItem("celular");
       const emailInput = document.getElementById("lead-email");
-      const emailConfirm = document.getElementById("lead-email-confirm");
       nameInput.addEventListener("input", () => {
         nameInput.value = nameInput.value.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]/g, "");
       });
       phoneInput.addEventListener("input", () => {
         phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
       });
-      const validateEmailMatch = () => {
-        emailConfirm.setCustomValidity(emailConfirm.value && emailConfirm.value !== emailInput.value ? "Los correos electrónicos no coinciden." : "");
-      };
-      emailInput.addEventListener("input", validateEmailMatch);
-      emailConfirm.addEventListener("input", validateEmailMatch);
             dialog.querySelector("[data-lead-close]").addEventListener("click", () => dialog.close());
       dialog.addEventListener("click", (event) => {
         if (event.target === dialog) dialog.close();
