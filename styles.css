@@ -30,6 +30,13 @@
 @media(max-width:520px){.site-header .btn-whatsapp{font-size:10px;padding:11px 12px}}
 
 /* Opiniones de clientes */
-.testimonials{padding:76px 0;background:#FFFFFF}.testimonials-inner{display:flex;flex-direction:column;gap:30px}.testimonials-inner>h2{margin:0;text-align:center;color:var(--navy);font-size:clamp(27px,3vw,38px)}.testimonials-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}.testimonial-card{margin:0;padding:12px;background:#fff;border:1px solid #E5E9ED;border-radius:8px;box-shadow:0 8px 24px rgba(24,52,75,.07);display:flex;justify-content:center;align-items:flex-start;min-width:0;height:370px;overflow:hidden}.testimonial-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
-@media(max-width:820px){.testimonials{padding:58px 0}.testimonials-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.testimonial-card{height:350px}.testimonial-card img{height:100%}}
-@media(max-width:560px){.testimonials{padding:46px 0}.testimonials-inner{gap:22px}.testimonials-grid{grid-template-columns:minmax(0,1fr);gap:16px}.testimonial-card{padding:10px;height:350px}.testimonial-card img{height:100%;object-fit:cover;object-position:top center}}
+
+/* Testimonios: slider de reseñas y video en columnas equilibradas */
+.testimonials{padding:68px 0;background:#FFFFFF}.testimonials-inner{display:flex;flex-direction:column;gap:28px}.testimonials-inner>h2{margin:0;text-align:center;color:var(--navy);font-size:clamp(27px,3vw,38px)}
+.testimonials-layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch;max-width:1060px;width:100%;margin:0 auto}
+.review-slider,.facebook-testimonial{min-width:0;height:390px;background:#fff;border:1px solid #E5E9ED;border-radius:8px;box-shadow:0 8px 24px rgba(24,52,75,.07);overflow:hidden}
+.review-slider{display:flex;flex-direction:column;padding:12px}.review-frame{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden}.review-slide{display:none;width:100%;height:100%;object-fit:contain;object-position:center center}.review-slide.active{display:block}
+.review-controls{height:48px;flex:none;display:flex;align-items:center;justify-content:center;gap:18px}.review-arrow{width:34px;height:34px;border:1px solid #D9E0E6;border-radius:50%;background:#fff;color:var(--navy);font-size:20px;line-height:1;cursor:pointer;transition:background .2s ease,color .2s ease}.review-arrow:hover{background:var(--navy);color:#fff}.review-count{font-size:12px;color:#737B83;font-weight:600;font-variant-numeric:tabular-nums}
+.facebook-testimonial{display:flex;align-items:center;justify-content:center;background:#F8FAFC}.facebook-testimonial iframe{display:block;width:100%;height:100%;border:0}
+@media(max-width:820px){.testimonials{padding:56px 0}.testimonials-layout{gap:16px}.review-slider,.facebook-testimonial{height:350px}}
+@media(max-width:560px){.testimonials{padding:46px 0}.testimonials-inner{gap:22px}.testimonials-layout{grid-template-columns:minmax(0,1fr);gap:18px;max-width:420px}.review-slider,.facebook-testimonial{height:370px}.facebook-testimonial{height:390px}}
