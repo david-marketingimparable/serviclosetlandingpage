@@ -550,3 +550,12 @@ main>section.split:not(#diseno):not(#materiales){background:#fff}
 @media(max-width:760px){.materials-showcase{padding:48px 0}.materials-showcase-inner{width:calc(100% - 40px);grid-template-columns:1fr;gap:28px}.materials-feature{height:auto;aspect-ratio:1.35/1}.materials-information{padding:0}.materials-information h2{font-size:clamp(30px,7vw,42px)}.materials-information>p{font-size:14px;margin-bottom:22px}.materials-categories{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.material-swatch{height:125px}.material-category h3{font-size:12px;min-height:45px}}
 @media(max-width:420px){.materials-categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.material-swatch{height:135px}.material-category h3{font-size:12px}.materials-showcase-inner{width:calc(100% - 36px)}}
 @media(prefers-reduced-motion:reduce){.materials-feature img,.material-category{transition:none}}
+
+
+/* Variación cromática en títulos: azul profundo con remate corporativo */
+h1,h2,h3{color:#17324D}
+.title-accent{color:#2784BD}
+.offer h2,.closing h2{color:#fff}
+.offer h2 .title-accent,.closing h2 .title-accent{color:#DDF2FF}
+.steps h3{color:#17324D}
+.steps h3 .title-accent{color:#2784BD}
