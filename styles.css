@@ -329,3 +329,100 @@
   .gallery-tile{width:100%;height:auto;aspect-ratio:1/1}
   .gallery-before-after .project-label{left:9px;bottom:43px;font-size:11px;padding:6px 9px}
 }
+
+
+/* Ajustes de legibilidad y proporción para celulares */
+@media(max-width:600px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  .container{width:calc(100% - 40px);max-width:100%;margin-left:auto;margin-right:auto}
+  .site-header{width:100%}
+  .nav{width:calc(100% - 32px);min-height:66px;padding:10px 0;gap:10px;flex-wrap:nowrap}
+  .brand{flex:0 1 auto;min-width:0;gap:8px}
+  .brand-mark{width:32px;height:32px;flex:none}
+  .brand strong{font-size:11px;letter-spacing:.1em}
+  .brand span{font-size:8px;letter-spacing:.18em}
+  .nav>.btn,.nav .btn-whatsapp{flex:0 0 auto;max-width:58%;margin-left:auto;padding:10px 11px;font-size:9px;line-height:1.3;text-align:center;white-space:normal}
+  h1{font-size:clamp(32px,9vw,40px);line-height:1.12;letter-spacing:-.04em}
+  h2{font-size:clamp(25px,7vw,32px);line-height:1.18;letter-spacing:-.03em}
+  p{font-size:13px;line-height:1.7}
+  .hero-grid{width:100%;min-height:0;gap:0}
+  .hero-copy{width:calc(100% - 40px);margin:0 auto;padding:44px 0 30px}
+  .hero-sub{font-size:14px;line-height:1.65;margin-bottom:20px}
+  .hero-proof{padding-left:0;margin:0 0 20px}
+  .hero-proof strong{font-size:13px}
+  .hero-copy .btn{max-width:100%;padding:13px 16px;font-size:11px}
+  .hero-image{width:calc(100% - 40px);min-height:0;height:auto;aspect-ratio:4/3;margin:0 auto 20px;overflow:hidden;border-radius:3px}
+  .hero-image img{width:100%;height:100%;object-fit:cover}
+  .split,.split-reverse{width:100%;min-height:0;display:flex;flex-direction:column;gap:0}
+  .split .content,.split-reverse .content{order:1;width:100%;padding:36px 20px 22px;margin:0}
+  .split .content h2{margin-bottom:12px}
+  .split .content p{max-width:560px}
+  .split .media,.split-reverse .media,.offer .media{order:2;width:calc(100% - 40px);height:auto;min-height:0;aspect-ratio:4/3;margin:0 auto 28px;overflow:hidden;border-radius:3px}
+  .split .media img,.split-reverse .media img,.offer .media img{width:100%;height:100%;object-fit:cover}
+  .projects{width:calc(100% - 40px);padding:38px 0 44px}
+  .projects>h2{font-size:clamp(25px,7vw,31px);line-height:1.2;margin:0 0 18px}
+  .gallery{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto;gap:9px;width:100%;aspect-ratio:auto}
+  .gallery-main{grid-column:1 / -1;grid-row:auto;width:100%;height:auto;min-height:0;aspect-ratio:1280/1418}
+  .gallery-main .project-viewport{width:100%;height:100%;min-height:0;aspect-ratio:auto}
+  .gallery-main .project-slide{width:100%;height:100%;object-fit:cover;object-position:center center}
+  .gallery-before-after{grid-column:auto;grid-row:auto;width:100%;height:auto;min-height:0;aspect-ratio:1/1}
+  .gallery-before-after .project-viewport{width:100%;height:100%;min-height:0;aspect-ratio:auto}
+  .gallery-before-after .project-slide,.gallery-tile{width:100%;height:100%;min-height:0;object-fit:cover;object-position:center}
+  .gallery-tile{grid-column:auto;grid-row:auto;aspect-ratio:1/1}
+  .gallery-before-after .project-controls{gap:6px;padding:5px 4px}
+  .gallery-before-after .project-arrow{width:25px;height:25px;font-size:14px}
+  .gallery-before-after .project-count{font-size:10px;min-width:28px}
+  .gallery-before-after .project-label{left:8px;bottom:37px;padding:6px 8px;font-size:10px}
+  .project-controls{gap:12px;padding:9px}
+  .project-arrow{width:31px;height:31px;font-size:18px}
+  .project-count{font-size:11px}
+  .offer-grid{width:100%;min-height:0;gap:0}
+  .offer-grid>div:first-child{width:calc(100% - 40px);margin:0 auto;padding:38px 0 24px}
+  .offer h2{font-size:clamp(26px,7.2vw,33px);line-height:1.18}
+  .offer p{font-size:13px;line-height:1.65}
+  .gift{width:100%;gap:12px;padding:11px 12px;margin-top:18px}
+  .gift img{width:78px;height:60px;flex-basis:78px}
+  .gift strong{font-size:15px}
+  .gift span{font-size:11px}
+  .offer .media{margin-bottom:30px}
+  .process{width:calc(100% - 40px);padding:42px 0}
+  .process h2{font-size:clamp(25px,7vw,31px);text-align:center}
+  .steps{grid-template-columns:minmax(0,1fr);gap:22px;margin-top:28px}
+  .steps>div,.steps>div:last-child{grid-column:auto;width:100%;padding:0 8px;text-align:center}
+  .steps b{font-size:25px}
+  .steps h3{font-size:13px;margin:7px 0 5px}
+  .steps p{font-size:12px;line-height:1.6}
+  .testimonials{width:100%;padding:38px 0}
+  .testimonials-inner{width:calc(100% - 40px)}
+  .testimonials-layout{width:100%;max-width:440px;grid-template-columns:minmax(0,1fr);gap:18px;margin:0 auto}
+  .reviews-column{width:100%;gap:12px}
+  .reviews-title{font-size:clamp(23px,6.5vw,29px);line-height:1.2}
+  .review-slider{width:100%;padding:8px;gap:8px}
+  .review-frame{width:100%;aspect-ratio:1/1;min-height:0}
+  .review-slide{width:100%;height:100%;object-fit:contain}
+  .facebook-testimonial{width:100%;max-width:none;min-height:0;height:auto;aspect-ratio:1/1;margin:0}
+  .facebook-testimonial iframe{width:100%;height:100%;min-height:0}
+  .closing-inner{width:calc(100% - 40px);min-height:0;grid-template-columns:minmax(0,1fr);gap:0}
+  .closing-inner>div:first-child{width:100%;padding:38px 0 24px}
+  .closing h2{font-size:clamp(27px,7.5vw,35px);line-height:1.16;margin-bottom:12px}
+  .closing p{font-size:13px;line-height:1.65;margin-bottom:18px}
+  .closing .btn,.closing .btn-whatsapp{align-self:flex-start;max-width:100%;padding:13px 16px;font-size:11px}
+  .closing-form-panel{width:100%;margin:0 0 28px;padding:20px 16px;border-radius:8px}
+  .closing-form-head{padding:0 0 13px}
+  .closing-form-head h2{font-size:21px;line-height:1.2}
+  .closing-form-head .lead-intro{font-size:12px;line-height:1.55}
+  #inline-lead-form .lead-fields{grid-template-columns:minmax(0,1fr);gap:11px}
+  #inline-lead-form .lead-fields label{min-width:0;font-size:11px}
+  #inline-lead-form .lead-fields input,#inline-lead-form .lead-fields select{width:100%;height:42px;min-width:0;font-size:12px}
+  #inline-lead-form .lead-fields textarea{width:100%;min-width:0;min-height:82px;font-size:12px}
+  #inline-lead-form .lead-project{grid-column:auto}
+  #inline-lead-form .lead-submit{width:100%;min-height:44px;font-size:12px}
+  .site-footer{padding:17px 0}
+  .site-footer .container{width:calc(100% - 40px)}
+  .site-footer p{font-size:10px;line-height:1.55}
+  .whatsapp-float{right:12px;bottom:12px;max-width:calc(100vw - 24px);padding:10px 13px;font-size:11px}
+}
+@media(min-width:390px) and (max-width:600px){
+  .hero-copy{padding-top:48px}
+  .split .content,.split-reverse .content{padding-top:40px}
+}
