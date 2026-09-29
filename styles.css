@@ -78,3 +78,32 @@
 .lead-submit{width:100%;min-height:46px;border:0;background:var(--navy);color:#fff;cursor:pointer;font:700 13px Montserrat,Arial,sans-serif}
 .lead-submit:hover{background:#1F72A6}
 @media(max-width:520px){.lead-dialog{max-height:92dvh;border-radius:10px}.lead-dialog-head{padding:22px 20px 14px}.lead-dialog-head h2{font-size:22px}#lead-form{padding:0 20px 22px}.lead-fields{grid-template-columns:1fr;gap:12px}.lead-project{grid-column:auto}.lead-fields input,.lead-fields select{height:42px}}
+
+
+/* Carrusel principal de proyectos: foto limpia y controles discretos */
+.gallery-main{grid-row:span 2;position:relative;min-width:0;min-height:0;overflow:hidden;border-radius:2px;background:#F3F6F8}
+.project-viewport{position:relative;width:100%;height:100%;min-height:0;overflow:hidden}
+.project-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;visibility:hidden;transition:opacity .45s ease,transform .7s ease;transform:translate3d(0,var(--parallax-y,0px),0) scale(1.015)}
+.project-slide.active{opacity:1;visibility:visible}
+.project-controls{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:center;justify-content:center;gap:16px;padding:12px;background:linear-gradient(0deg,rgba(18,37,53,.58),rgba(18,37,53,0));}
+.project-arrow{width:34px;height:34px;border:1px solid rgba(255,255,255,.78);border-radius:50%;background:rgba(255,255,255,.94);color:#2784BD;font-size:20px;line-height:1;cursor:pointer;transition:background .2s ease,color .2s ease,transform .2s ease}
+.project-arrow:hover{background:#2784BD;color:#fff;transform:translateY(-1px)}
+.project-count{min-width:36px;text-align:center;color:#fff;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;text-shadow:0 1px 5px rgba(0,0,0,.3)}
+/* Animaciones suaves activadas al entrar en pantalla */
+.scroll-reveal{opacity:1;transform:none}
+.motion-ready .scroll-reveal{opacity:0;transform:translate3d(0,18px,0);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.65,.3,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready .scroll-reveal.is-visible{opacity:1;transform:translate3d(0,0,0)}
+.hero-image img,.media img,.closing-image img{transform:translate3d(0,var(--parallax-y,0px),0);will-change:transform}
+@media(max-width:820px){
+  .gallery-main{grid-column:span 2;grid-row:span 2;min-height:0}
+  .project-viewport{min-height:100%}
+}
+@media(max-width:520px){
+  .gallery-main{grid-column:auto;grid-row:auto;height:270px}
+  .project-viewport{height:270px}
+  .project-slide{object-position:center top}
+}
+@media(prefers-reduced-motion:reduce){
+  .motion-ready .scroll-reveal,.motion-ready .scroll-reveal.is-visible{opacity:1;transform:none;transition:none}
+  .project-slide,.hero-image img,.media img,.closing-image img{transition:none;transform:none}
+}
