@@ -153,34 +153,37 @@
     <form id="lead-form">
       <div class="lead-fields">
         <label>Nombre
-          <input name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required>
+          <input name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\\s]+" title="Escribe solo letras y espacios." required>
         </label>
         <label>Correo electrónico
-          <input name="correo" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
+          <input name="correo" id="lead-email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
+        </label>
+        <label>Confirmar correo electrónico
+          <input name="confirmar-correo" id="lead-email-confirm" type="email" autocomplete="email" placeholder="Confirma tu correo" required>
         </label>
         <label>Número de celular
-          <input name="celular" type="tel" inputmode="tel" autocomplete="tel" placeholder="10 dígitos" required>
+          <input name="celular" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10 dígitos" pattern="[0-9]{10}" minlength="10" maxlength="10" title="Ingresa un número de celular de 10 dígitos, solo números." required>
         </label>
         <label>Municipio
           <select name="municipio" required>
             <option value="" selected disabled>Selecciona tu municipio</option>
-            <option>Monterrey</option>
             <option>Apodaca</option>
             <option>Cadereyta Jiménez</option>
+            <option>Ciénega de Flores</option>
             <option>El Carmen</option>
             <option>García</option>
             <option>General Escobedo</option>
             <option>General Zuazua</option>
             <option>Guadalupe</option>
+            <option>Hidalgo</option>
             <option>Juárez</option>
+            <option>Monterrey</option>
+            <option>Pesquería</option>
             <option>Salinas Victoria</option>
             <option>San Nicolás de los Garza</option>
             <option>San Pedro Garza García</option>
             <option>Santa Catarina</option>
             <option>Santiago</option>
-            <option>Pesquería</option>
-            <option>Ciénega de Flores</option>
-            <option>Hidalgo</option>
           </select>
         </label>
         <label class="lead-project">Cuéntanos un poco sobre tu proyecto <span>(opcional)</span>
@@ -225,7 +228,22 @@
           if (typeof dialog.showModal === "function") dialog.showModal();
         });
       });
-      dialog.querySelector("[data-lead-close]").addEventListener("click", () => dialog.close());
+      const nameInput = form.elements.namedItem("nombre");
+      const phoneInput = form.elements.namedItem("celular");
+      const emailInput = document.getElementById("lead-email");
+      const emailConfirm = document.getElementById("lead-email-confirm");
+      nameInput.addEventListener("input", () => {
+        nameInput.value = nameInput.value.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ\\s]/g, "");
+      });
+      phoneInput.addEventListener("input", () => {
+        phoneInput.value = phoneInput.value.replace(/\\D/g, "").slice(0, 10);
+      });
+      const validateEmailMatch = () => {
+        emailConfirm.setCustomValidity(emailConfirm.value && emailConfirm.value !== emailInput.value ? "Los correos electrónicos no coinciden." : "");
+      };
+      emailInput.addEventListener("input", validateEmailMatch);
+      emailConfirm.addEventListener("input", validateEmailMatch);
+            dialog.querySelector("[data-lead-close]").addEventListener("click", () => dialog.close());
       dialog.addEventListener("click", (event) => {
         if (event.target === dialog) dialog.close();
       });
