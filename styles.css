@@ -559,3 +559,15 @@ h1,h2,h3{color:#17324D}
 .offer h2 .title-accent,.closing h2 .title-accent{color:#DDF2FF}
 .steps h3{color:#17324D}
 .steps h3 .title-accent{color:#2784BD}
+
+
+/* Ampliación de fotografías de proyectos */
+.gallery-tile-wrap{position:relative;min-width:0;min-height:0;width:100%;height:100%;overflow:hidden;border-radius:6px;box-shadow:0 8px 24px rgba(23,50,77,.10)}
+.gallery-tile-wrap .gallery-tile{display:block;width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;object-position:center;margin:0;border-radius:0;box-shadow:none}
+.image-zoom{position:absolute;top:12px;right:12px;z-index:5;width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.85);border-radius:50%;background:rgba(255,255,255,.94);color:#2784BD;box-shadow:0 3px 12px rgba(23,50,77,.2);font:600 22px/1 Montserrat,sans-serif;cursor:pointer;transition:transform .2s ease,background .2s ease,color .2s ease}
+.image-zoom:hover{transform:scale(1.07);background:#2784BD;color:#fff}
+.image-lightbox{position:fixed;inset:0;width:min(94vw,1400px);height:min(92dvh,1000px);max-width:none;max-height:none;padding:54px 20px 20px;border:0;border-radius:10px;background:#fff;overflow:hidden;box-shadow:0 20px 70px rgba(0,0,0,.35)}
+.image-lightbox::backdrop{background:rgba(12,25,38,.88);backdrop-filter:blur(3px)}
+.lightbox-image{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.lightbox-close{position:absolute;top:10px;right:12px;z-index:2;width:36px;height:36px;border:0;border-radius:50%;background:#2784BD;color:#fff;font:400 28px/1 Montserrat,sans-serif;cursor:pointer;box-shadow:0 3px 12px rgba(23,50,77,.2)}
+@media(max-width:520px){.gallery-tile-wrap{height:auto;aspect-ratio:1/1}.image-zoom{top:8px;right:8px;width:32px;height:32px;font-size:20px}.image-lightbox{width:96vw;height:88dvh;padding:48px 10px 10px;border-radius:7px}.lightbox-close{top:8px;right:8px;width:34px;height:34px}}
