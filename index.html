@@ -305,13 +305,13 @@
       if (!form) return;
       const nameInput = form.elements.namedItem("nombre");
       const phoneInput = form.elements.namedItem("celular");
-      nameInput.addEventListener("input", () => { nameInput.value = nameInput.value.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ\\s]/g, ""); });
-      phoneInput.addEventListener("input", () => { phoneInput.value = phoneInput.value.replace(/\\D/g, "").slice(0, 10); });
+      nameInput.addEventListener("input", () => { nameInput.value = nameInput.value.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]/g, ""); });
+      phoneInput.addEventListener("input", () => { phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10); });
       form.addEventListener("submit", (event) => {
         event.preventDefault();
         if (!form.reportValidity()) return;
         const data = new FormData(form);
-        const message = ["Hola, me interesa cotizar una cocina personalizada.", "", "Nombre: " + data.get("nombre"), "Correo electrónico: " + data.get("correo"), "Número de celular: " + data.get("celular"), "Municipio: " + data.get("municipio"), "Detalles del proyecto: " + (data.get("proyecto").trim() || "No especificados")].join("\\n");
+        const message = ["Hola, me interesa cotizar una cocina personalizada.", "", "Nombre: " + data.get("nombre"), "Correo electrónico: " + data.get("correo"), "Número de celular: " + data.get("celular"), "Municipio: " + data.get("municipio"), "Detalles del proyecto: " + (data.get("proyecto").trim() || "No especificados")].join("\n");
         window.open("https://wa.me/528111742691?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
       });
     })();
