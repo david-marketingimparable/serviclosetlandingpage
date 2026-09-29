@@ -504,3 +504,5 @@ main>section.split:not(#diseno):not(#materiales){background:#fff}
   .offer{background:linear-gradient(145deg,#2784BD 0%,#216F9F 100%)}
   .closing{background:linear-gradient(145deg,#2784BD 0%,#216F9F 100%)}
 }
+
+@media(min-width:821px){.steps:before{top:47px}}@media(min-width:601px) and (max-width:820px){.steps:before{top:45px}}
