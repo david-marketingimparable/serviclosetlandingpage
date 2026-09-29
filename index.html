@@ -148,7 +148,19 @@
           <p>Contáctanos para agendar una evaluación y toma de medidas sin costo.</p>
           <a class="btn btn-light" href="https://wa.me/528111742691?text=Hola%2C%20me%20interesa%20cotizar%20una%20cocina%20personalizada." target="_blank" rel="noopener">Cotizar por WhatsApp →</a>
         </div>
-        <div class="closing-image"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85" alt="Cocina personalizada terminada" loading="lazy"></div>
+        <div class="closing-form-panel">
+          <div class="lead-dialog-head closing-form-head"><div><p class="lead-eyebrow">COTIZA TU COCINA</p><h2 id="closing-form-title">Cuéntanos sobre tu proyecto</h2><p class="lead-intro">Déjanos tus datos y continúa la conversación por WhatsApp.</p></div></div>
+          <form id="inline-lead-form">
+            <div class="lead-fields">
+              <label>Nombre<input name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+" title="Escribe solo letras y espacios." required></label>
+              <label>Correo electrónico<input name="correo" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required></label>
+              <label>Número de celular<input name="celular" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10 dígitos" pattern="[0-9]{10}" minlength="10" maxlength="10" title="Ingresa un número de celular de 10 dígitos, solo números." required></label>
+              <label>Municipio<select name="municipio" required><option value="" selected disabled>Selecciona tu municipio</option><option>Apodaca</option><option>Cadereyta Jiménez</option><option>Ciénega de Flores</option><option>El Carmen</option><option>García</option><option>General Escobedo</option><option>General Zuazua</option><option>Guadalupe</option><option>Hidalgo</option><option>Juárez</option><option>Monterrey</option><option>Pesquería</option><option>Salinas Victoria</option><option>San Nicolás de los Garza</option><option>San Pedro Garza García</option><option>Santa Catarina</option><option>Santiago</option></select></label>
+              <label class="lead-project">Cuéntanos un poco sobre tu proyecto <span>(opcional)</span><textarea name="proyecto" rows="3" placeholder="¿Qué tipo de cocina buscas? ¿Tienes medidas, ideas o algún detalle que quieras compartir?"></textarea></label>
+            </div>
+            <button class="btn lead-submit" type="submit">Enviar por WhatsApp →</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -288,6 +300,22 @@
     })();
 
     (() => {
+    (() => {
+      const form = document.getElementById("inline-lead-form");
+      if (!form) return;
+      const nameInput = form.elements.namedItem("nombre");
+      const phoneInput = form.elements.namedItem("celular");
+      nameInput.addEventListener("input", () => { nameInput.value = nameInput.value.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ\\s]/g, ""); });
+      phoneInput.addEventListener("input", () => { phoneInput.value = phoneInput.value.replace(/\\D/g, "").slice(0, 10); });
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const data = new FormData(form);
+        const message = ["Hola, me interesa cotizar una cocina personalizada.", "", "Nombre: " + data.get("nombre"), "Correo electrónico: " + data.get("correo"), "Número de celular: " + data.get("celular"), "Municipio: " + data.get("municipio"), "Detalles del proyecto: " + (data.get("proyecto").trim() || "No especificados")].join("\\n");
+        window.open("https://wa.me/528111742691?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+      });
+    })();
+
       const dialog = document.getElementById("lead-dialog");
       const form = document.getElementById("lead-form");
       if (!dialog || !form) return;
