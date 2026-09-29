@@ -55,23 +55,20 @@
     <section class="projects container" id="proyectos">
       <h2>Nuestros proyectos:</h2>
       <div class="gallery">
-        <div class="gallery-main project-carousel" aria-label="Carrusel de proyectos de cocina">
+        <div class="gallery-main project-carousel" aria-label="Carrusel de fotografías Antes y Después">
           <div class="project-viewport">
-            <img class="project-slide active" src="assets/1.jpg" alt="Proyecto de cocina Servicloset, proyecto 1" fetchpriority="low">
-            <img class="project-slide" src="assets/2.jpg" alt="Proyecto de cocina Servicloset, proyecto 2" loading="lazy">
-            <img class="project-slide" src="assets/3.jpg" alt="Proyecto de cocina Servicloset, proyecto 3" loading="lazy">
-            <img class="project-slide" src="assets/4.jpg" alt="Proyecto de cocina Servicloset, proyecto 4" loading="lazy">
+            <img class="project-slide active" src="assets/cocina4.png" alt="Antes: cocina original del proyecto" fetchpriority="low">
+            <img class="project-slide" src="assets/cocina3.png" alt="Después: cocina después del proyecto" loading="lazy">
+            <span class="project-label active" aria-hidden="true">Antes</span>
+            <span class="project-label" aria-hidden="true">Después</span>
           </div>
           <div class="project-controls">
-            <button class="project-arrow" type="button" data-project-prev aria-label="Ver proyecto anterior">←</button>
-            <span class="project-count" aria-live="polite">1 / 4</span>
-            <button class="project-arrow" type="button" data-project-next aria-label="Ver siguiente proyecto">→</button>
+            <button class="project-arrow" type="button" data-project-prev aria-label="Ver fotografía anterior">←</button>
+            <span class="project-count" aria-live="polite">1 / 2</span>
+            <button class="project-arrow" type="button" data-project-next aria-label="Ver fotografía siguiente">→</button>
           </div>
         </div>
-        <img src="assets/cocina3.png" alt="Cocina contemporánea" loading="lazy">
-        <img src="assets/cocina4.png" alt="Cocina con isla" loading="lazy">
-        <img src="assets/cocina5.png" alt="Detalle de cocina" loading="lazy">
-        <img src="assets/cocina6.png" alt="Proyecto residencial" loading="lazy">
+        <div class="gallery-reserved" aria-label="Espacio reservado para una próxima fotografía"></div>
       </div>
     </section>
 
@@ -233,6 +230,7 @@
           slide.classList.toggle("active", i === current);
           slide.setAttribute("aria-hidden", i === current ? "false" : "true");
         });
+        carousel.querySelectorAll(".project-label").forEach((label, i) => label.classList.toggle("active", i === current));
         count.textContent = (current + 1) + " / " + slides.length;
       };
       carousel.querySelector("[data-project-prev]").addEventListener("click", () => show(current - 1));
