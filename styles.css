@@ -54,3 +54,27 @@
 
 /* Footer corporativo */
 .site-footer{background:#fff;border-top:1px solid #E9E9E9;padding:20px 0;text-align:center}.site-footer p{margin:0;color:#737B83;font-size:11px;line-height:1.6}
+
+
+/* Formulario de contacto que continúa en WhatsApp */
+.lead-dialog{width:min(540px,calc(100% - 28px));max-width:540px;max-height:min(90dvh,760px);padding:0;border:0;border-radius:12px;background:#fff;color:var(--graphite);box-shadow:0 24px 80px rgba(15,35,52,.28);overflow:auto}
+.lead-dialog::backdrop{background:rgba(16,31,45,.58);backdrop-filter:blur(3px)}
+.lead-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:27px 28px 16px}
+.lead-eyebrow{margin:0 0 8px;color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.16em}
+.lead-dialog-head h2{font-size:26px;line-height:1.2;margin:0 0 8px}
+.lead-intro{font-size:13px;line-height:1.55;color:#68727B}
+.lead-close{flex:none;border:0;background:transparent;color:#68727B;font-size:30px;line-height:1;cursor:pointer;padding:0 2px}
+#lead-form{padding:0 28px 28px}
+.lead-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px 14px}
+.lead-fields label{display:flex;flex-direction:column;gap:7px;color:#30343B;font-size:12px;font-weight:600}
+.lead-fields input,.lead-fields select,.lead-fields textarea{width:100%;min-width:0;border:1px solid #D9E0E6;border-radius:5px;background:#fff;color:#30343B;padding:12px 13px;font:400 13px Montserrat,Arial,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.lead-fields input,.lead-fields select{height:43px}
+.lead-fields textarea{resize:vertical;min-height:86px;line-height:1.5}
+.lead-fields input:focus,.lead-fields select:focus,.lead-fields textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(39,132,189,.12)}
+.lead-fields input::placeholder,.lead-fields textarea::placeholder{color:#9AA2A9}
+.lead-project{grid-column:1/-1}
+.lead-project span{font-weight:400;color:#7B838A}
+.lead-privacy{margin:15px 0;color:#747D85;font-size:11px;line-height:1.5}
+.lead-submit{width:100%;min-height:46px;border:0;background:var(--navy);color:#fff;cursor:pointer;font:700 13px Montserrat,Arial,sans-serif}
+.lead-submit:hover{background:#1F72A6}
+@media(max-width:520px){.lead-dialog{max-height:92dvh;border-radius:10px}.lead-dialog-head{padding:22px 20px 14px}.lead-dialog-head h2{font-size:22px}#lead-form{padding:0 20px 22px}.lead-fields{grid-template-columns:1fr;gap:12px}.lead-project{grid-column:auto}.lead-fields input,.lead-fields select{height:42px}}
