@@ -153,7 +153,7 @@
     <form id="lead-form">
       <div class="lead-fields">
         <label>Nombre
-          <input name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\\s]+" title="Escribe solo letras y espacios." required>
+          <input name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+" title="Escribe solo letras y espacios." required>
         </label>
         <label>Correo electrónico
           <input name="correo" id="lead-email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
@@ -233,10 +233,10 @@
       const emailInput = document.getElementById("lead-email");
       const emailConfirm = document.getElementById("lead-email-confirm");
       nameInput.addEventListener("input", () => {
-        nameInput.value = nameInput.value.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ\\s]/g, "");
+        nameInput.value = nameInput.value.replace(/[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]/g, "");
       });
       phoneInput.addEventListener("input", () => {
-        phoneInput.value = phoneInput.value.replace(/\\D/g, "").slice(0, 10);
+        phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
       });
       const validateEmailMatch = () => {
         emailConfirm.setCustomValidity(emailConfirm.value && emailConfirm.value !== emailInput.value ? "Los correos electrónicos no coinciden." : "");
