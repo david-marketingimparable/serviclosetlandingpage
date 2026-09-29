@@ -557,8 +557,7 @@ h1,h2,h3{color:#17324D}
 .title-accent{color:#2784BD}
 .offer h2,.closing h2{color:#fff}
 .offer h2 .title-accent,.closing h2 .title-accent{color:#DDF2FF}
-.steps h3{color:#17324D}
-.steps h3 .title-accent{color:#2784BD}
+.steps h3,.steps h3 .title-accent{color:#2784BD}
 
 
 /* Ampliación de fotografías de proyectos */
