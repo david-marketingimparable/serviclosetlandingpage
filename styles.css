@@ -694,3 +694,15 @@ h1,h2,h3{color:#17324D}
   .hero-grid{width:100%;max-width:none;padding-left:0;padding-right:0}
   .hero-copy{max-width:none}
 }
+
+
+/* Panel translúcido aprobado para dar contraste al contenido del hero */
+@media(min-width:821px){
+  .hero-copy{isolation:isolate;padding:58px 30px 58px 18px}
+  .hero-copy::before{content:"";position:absolute;z-index:-1;top:18px;bottom:18px;left:0;right:-12px;border:1px solid rgba(255,255,255,.10);border-radius:14px;background:linear-gradient(90deg,rgba(5,39,75,.88) 0%,rgba(5,39,75,.78) 72%,rgba(5,39,75,.48) 100%);box-shadow:0 18px 48px rgba(2,24,48,.18);backdrop-filter:blur(2px)}
+}
+@media(max-width:820px){
+  .hero-copy{position:relative;isolation:isolate}
+  .hero-copy::before{content:"";position:absolute;z-index:-1;top:0;bottom:12px;left:12px;right:12px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:linear-gradient(145deg,rgba(5,39,75,.88),rgba(5,39,75,.80));box-shadow:0 16px 40px rgba(2,24,48,.22);backdrop-filter:blur(3px)}
+}
+@media(max-width:520px){.hero-copy::before{left:10px;right:10px;bottom:10px;border-radius:12px}}
