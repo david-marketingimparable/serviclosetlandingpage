@@ -118,7 +118,17 @@
         <h2>Somos <span class="title-accent">fabricantes.</span></h2>
         <p>Fabricamos tu cocina de principio a fin, ofreciendo materiales de alta calidad a precios competitivos.</p>
       </div>
-      <div class="media"><img src="assets/fabricando.png" alt="Fabricación de cocinas en Servicloset" loading="lazy"></div>
+      <div class="media fabrication-carousel" aria-label="Etapas de fabricación de cocinas">
+        <img class="fabrication-slide active" src="assets/fabricando.png" alt="Etapa 1: preparación y fabricación de piezas en Servicloset" loading="lazy">
+        <div class="fabrication-controls">
+          <button class="fabrication-arrow" type="button" data-fabrication-prev aria-label="Ver etapa anterior" disabled><span aria-hidden="true">←</span></button>
+          <div class="fabrication-progress" aria-label="Progreso del proceso">
+            <span class="fabrication-step active" data-fabrication-step="0">01</span><i></i><span class="fabrication-step" data-fabrication-step="1">02</span><i></i><span class="fabrication-step" data-fabrication-step="2">03</span>
+          </div>
+          <span class="fabrication-stage" data-fabrication-status aria-live="polite">Etapa 1 de 3</span>
+          <button class="fabrication-arrow" type="button" data-fabrication-next aria-label="Avanzar a la siguiente etapa"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
     </section>
 
     
@@ -463,6 +473,39 @@
         window.open(whatsappUrl, "_blank", "noopener,noreferrer");
         dialog.close();
       });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const carousel = document.querySelector(".fabrication-carousel");
+      if (!carousel) return;
+      const image = carousel.querySelector(".fabrication-slide");
+      const prev = carousel.querySelector("[data-fabrication-prev]");
+      const next = carousel.querySelector("[data-fabrication-next]");
+      const status = carousel.querySelector("[data-fabrication-status]");
+      const steps = [...carousel.querySelectorAll("[data-fabrication-step]")];
+      const slides = [
+        { src: "assets/fabricando.png", alt: "Etapa 1: preparación y fabricación de piezas en Servicloset" },
+        { src: "assets/fabricantes4.png", alt: "Etapa 2: proceso de fabricación de cocinas en Servicloset" },
+        { src: "assets/fabricantes3.png", alt: "Etapa 3: piezas y acabados de fabricación en Servicloset" }
+      ];
+      let current = 0;
+      const show = (index) => {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        image.src = slides[current].src;
+        image.alt = slides[current].alt;
+        prev.disabled = current === 0;
+        next.disabled = current === slides.length - 1;
+        status.textContent = "Etapa " + (current + 1) + " de " + slides.length;
+        steps.forEach((step, i) => {
+          step.classList.toggle("active", i === current);
+          step.classList.toggle("completed", i < current);
+          step.setAttribute("aria-current", i === current ? "step" : "false");
+        });
+      };
+      prev.addEventListener("click", () => show(current - 1));
+      next.addEventListener("click", () => show(current + 1));
     })();
   </script>
 </body>
