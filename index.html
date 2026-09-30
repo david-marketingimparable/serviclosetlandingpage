@@ -431,7 +431,7 @@
         if (!form.reportValidity()) return;
         const data = new FormData(form);
         const message = ["Hola, me interesa cotizar una cocina personalizada.", "", "Nombre: " + data.get("nombre"), "Correo electrónico: " + data.get("correo"), "Número de celular: " + data.get("celular"), "Municipio: " + data.get("municipio"), "Detalles del proyecto: " + (data.get("proyecto").trim() || "No especificados")].join("\n");
-        window.open("https://wa.me/528111742691?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+        window.location.href = "gracias.html?mensaje=" + encodeURIComponent(message);
       });
     })();
 
@@ -470,9 +470,8 @@
           "Municipio: " + data.get("municipio"),
           "Detalles del proyecto: " + (data.get("proyecto").trim() || "No especificados")
         ].join("\n");
-        const whatsappUrl = "https://wa.me/528111742691?text=" + encodeURIComponent(message);
-        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-        dialog.close();
+        const thankYouUrl = "gracias.html?mensaje=" + encodeURIComponent(message);
+        window.location.href = thankYouUrl;
       });
     })();
   </script>
