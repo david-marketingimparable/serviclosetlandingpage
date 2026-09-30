@@ -917,3 +917,19 @@ h1,h2,h3{color:#17324D}
   .visual-price-flip-inner, .project-slide, .scroll-reveal,
   .hero-image img, .materials-feature img { transition: none !important; }
 }
+
+
+/* Microinteracciones y transiciones refinadas */
+.gallery-tile-wrap,.gallery-main,.gallery-before-after,.material-category,.steps>div,.btn,.project-arrow,.review-arrow,.image-zoom,.fabrication-arrow{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,border-color .25s ease;}
+@media(hover:hover) and (pointer:fine){
+ .gallery-tile-wrap:hover,.steps>div:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(23,50,77,.12);}
+ .gallery-main:hover,.gallery-before-after:hover{box-shadow:0 16px 36px rgba(23,50,77,.13);}
+ .material-category:hover{transform:translateY(-3px);}
+ .btn:hover,.project-arrow:hover:not(:disabled),.review-arrow:hover,.image-zoom:hover,.fabrication-arrow:hover:not(:disabled){transform:translateY(-2px);}
+ .material-category:hover .material-swatch img{transform:scale(1.045);}
+}
+.btn:active,.project-arrow:active,.review-arrow:active,.image-zoom:active,.fabrication-arrow:active:not(:disabled){transform:scale(.97);}
+.project-slide{transition:opacity .38s ease,transform .45s ease;}
+.material-category .material-swatch img{transition:transform .45s ease;}
+.fabrication-carousel .fabrication-slide{transition:opacity .3s ease,transform .4s ease;}
+@media(prefers-reduced-motion:reduce){.gallery-tile-wrap,.gallery-main,.gallery-before-after,.material-category,.steps>div,.btn,.project-arrow,.review-arrow,.image-zoom,.fabrication-arrow,.project-slide,.material-category .material-swatch img,.fabrication-carousel .fabrication-slide{transition:none!important;animation:none!important;will-change:auto;}}
