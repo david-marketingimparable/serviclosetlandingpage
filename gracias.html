@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Gracias por contactarnos | Servicloset & Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo-servicloset.svg">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{min-height:100vh;display:flex;flex-direction:column;background:#f7f9fc;font-family:Montserrat,sans-serif}
+    .site-header{width:100%}.thankyou-main{flex:1;display:grid;place-items:center;padding:64px 20px}
+    .thankyou-card{width:min(100%,650px);padding:clamp(30px,6vw,64px);background:#fff;border:1px solid #e8edf3;border-radius:22px;text-align:center;box-shadow:0 18px 60px rgba(20,55,95,.08)}
+    .thankyou-icon{width:76px;height:76px;margin:0 auto 24px;border-radius:50%;display:grid;place-items:center;background:#e9f8ef;color:#16a34a}
+    .thankyou-icon svg{width:38px;height:38px}.thankyou-card h1{margin:0 0 16px;color:#1768ad;font-size:clamp(28px,5vw,42px);line-height:1.15}
+    .thankyou-card p{margin:0 auto 12px;max-width:490px;color:#526174;font-size:16px;line-height:1.75}
+    .thankyou-card .btn{margin-top:22px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;background:#16a34a;color:#fff;border:0;border-radius:10px;text-decoration:none;font-weight:700;line-height:1.3}
+    .thankyou-card .btn:hover{background:#12833c}.thankyou-note{margin-top:20px!important;font-size:13px!important;color:#7b8795!important}
+    @media(max-width:600px){.thankyou-main{padding:32px 16px}.thankyou-card{border-radius:16px}.thankyou-card .btn{width:100%;box-sizing:border-box}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Servicloset & Home">
+        <img class="brand-mark" src="logo-servicloset.svg" alt="" aria-hidden="true">
+        <div><strong>SERVICLOSET</strong><span>& HOME</span></div>
+      </a>
+    </div>
+  </header>
+  <main class="thankyou-main">
+    <section class="thankyou-card" aria-labelledby="thankyou-title">
+      <div class="thankyou-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h1 id="thankyou-title">¡Gracias por contactarnos!</h1>
+      <p>Hemos recibido tus datos correctamente.</p>
+      <p>El siguiente paso es continuar por WhatsApp para conocer más sobre tu proyecto de cocina.</p>
+      <a class="btn" id="continue-whatsapp" href="https://wa.me/528111742691?text=Hola%2C%20me%20interesa%20cotizar%20una%20cocina%20personalizada." target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true">☏</span> Continuar conversación por WhatsApp <span aria-hidden="true">→</span>
+      </a>
+      <p class="thankyou-note">Servicloset &amp; Home</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><p>© 2026 Servicloset &amp; Home. Todos los derechos reservados.</p></div></footer>
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const message = params.get("mensaje");
+      const button = document.getElementById("continue-whatsapp");
+      if (message && button) button.href = "https://wa.me/528111742691?text=" + encodeURIComponent(message);
+    })();
+  </script>
+</body>
+</html>
