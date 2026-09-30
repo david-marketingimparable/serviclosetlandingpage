@@ -726,3 +726,19 @@ h1,h2,h3{color:#17324D}
 @media(max-width:820px){.visual-price-flip{padding:24px 20px}.visual-price-face{grid-template-columns:minmax(0,1fr);}.visual-price-image{min-height:0;aspect-ratio:4/3}.visual-price-image img{min-height:0}.visual-price-content{padding:30px 28px 34px}.visual-price-content h2{font-size:clamp(30px,6vw,42px)}.visual-price-content p{font-size:15px;margin-bottom:20px}}
 @media(max-width:520px){.visual-price-flip{padding:18px 14px}.visual-price-face{border-radius:9px}.visual-price-image{aspect-ratio:4/3}.visual-price-content{padding:25px 21px 27px}.visual-price-content h2{font-size:30px;line-height:1.15;margin-bottom:13px}.visual-price-content p{font-size:14px;line-height:1.65;margin-bottom:19px}.flip-action{min-height:44px;padding:11px 15px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.visual-price-flip-inner,.flip-action{transition:none}}
+
+
+/* Diferenciar ambas caras y mantener el control en la misma posición */
+.visual-price-content{position:relative;padding-bottom:104px;}
+.visual-price-back .visual-price-content{background:linear-gradient(135deg,#176DA4 0%,#12588D 55%,#0D4778 100%);color:#fff;}
+.visual-price-back .visual-price-content h2,.visual-price-back .visual-price-content p{color:#fff;}
+.visual-price-back .visual-price-content h2 .title-accent{color:#B9E5FF;}
+.flip-action{position:absolute;right:clamp(34px,5vw,76px);bottom:28px;display:flex;align-items:center;justify-content:center;width:50px;height:50px;min-height:50px;padding:0;border:1px solid rgba(255,255,255,.48);border-radius:50%;background:#2784BD;color:#fff;font-size:0;box-shadow:0 7px 20px rgba(12,55,91,.22);}
+.flip-action span{font-size:27px;line-height:1;transition:transform .35s ease;}
+.flip-action:hover{background:#176DA4;transform:translateY(-2px);}
+.flip-action:hover span{transform:rotate(90deg);}
+.visual-price-back .flip-action{background:#fff;color:#12588D;border-color:rgba(255,255,255,.85);}
+.visual-price-back .flip-action:hover{background:#DDF2FF;color:#0D4778;}
+@media(max-width:820px){.visual-price-content{padding-bottom:96px}.flip-action{right:28px;bottom:26px}}
+@media(max-width:520px){.visual-price-content{padding-bottom:88px}.flip-action{right:21px;bottom:22px;width:46px;height:46px;min-height:46px}.flip-action span{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.flip-action span{transition:none}}
