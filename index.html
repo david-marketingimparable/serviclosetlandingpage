@@ -255,7 +255,10 @@
 
   <dialog class="image-lightbox" id="project-lightbox" aria-label="Fotografía ampliada del proyecto">
     <button class="lightbox-close" type="button" data-lightbox-close aria-label="Cerrar imagen ampliada">×</button>
+    <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="Ver fotografía anterior">←</button>
     <img class="lightbox-image" data-lightbox-image alt="Fotografía ampliada del proyecto">
+    <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="Ver fotografía siguiente">→</button>
+    <span class="lightbox-status" data-lightbox-status aria-live="polite"></span>
   </dialog>
 
   <script>
@@ -263,16 +266,44 @@
     (() => {
       const lightbox = document.getElementById("project-lightbox");
       const enlarged = lightbox?.querySelector("[data-lightbox-image]");
+      const prev = lightbox?.querySelector("[data-lightbox-prev]");
+      const next = lightbox?.querySelector("[data-lightbox-next]");
+      const status = lightbox?.querySelector("[data-lightbox-status]");
       if (!lightbox || !enlarged) return;
+      let activeGallery = null;
+      const syncExpandedImage = () => {
+        const source = activeGallery?.querySelector(".project-slide.active");
+        if (!source) return;
+        enlarged.src = source.currentSrc || source.src;
+        enlarged.alt = source.alt || "Fotografía ampliada del proyecto";
+        if (status) status.textContent = activeGallery.classList.contains("gallery-before-after")
+          ? (source.alt.startsWith("Antes:") ? "Antes" : "Después")
+          : "";
+      };
       document.querySelectorAll("[data-image-zoom]").forEach((button) => {
         button.addEventListener("click", () => {
-          const galleryItem = button.closest(".project-carousel, .gallery-tile-wrap");
-          const source = galleryItem?.querySelector(".project-slide.active, .gallery-tile");
+          activeGallery = button.closest(".project-carousel, .gallery-tile-wrap");
+          const source = activeGallery?.querySelector(".project-slide.active, .gallery-tile");
           if (!source) return;
-          enlarged.src = source.currentSrc || source.src;
-          enlarged.alt = source.alt || "Fotografía ampliada del proyecto";
+          const isBeforeAfter = activeGallery.classList.contains("gallery-before-after");
+          if (prev) prev.hidden = !isBeforeAfter;
+          if (next) next.hidden = !isBeforeAfter;
+          if (status) status.hidden = !isBeforeAfter;
+          syncExpandedImage();
+          if (!activeGallery.classList.contains("gallery-before-after") && source.classList.contains("gallery-tile")) {
+            enlarged.src = source.currentSrc || source.src;
+            enlarged.alt = source.alt || "Fotografía ampliada del proyecto";
+          }
           if (typeof lightbox.showModal === "function") lightbox.showModal();
         });
+      });
+      prev?.addEventListener("click", () => {
+        activeGallery?.querySelector("[data-project-prev]")?.click();
+        syncExpandedImage();
+      });
+      next?.addEventListener("click", () => {
+        activeGallery?.querySelector("[data-project-next]")?.click();
+        syncExpandedImage();
       });
       lightbox.querySelector("[data-lightbox-close]")?.addEventListener("click", () => lightbox.close());
       lightbox.addEventListener("click", (event) => {
