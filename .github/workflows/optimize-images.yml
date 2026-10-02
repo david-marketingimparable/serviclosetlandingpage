@@ -33,7 +33,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets '*.html' '*.css' '*.js'
           if ! git diff --cached --quiet; then
-            git commit -m "Optimize website images [skip ci]"
+            git commit -m "Optimize website images"
             git push
           else
             echo "No image optimizations needed."
