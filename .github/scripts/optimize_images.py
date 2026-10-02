@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Create WebP copies of site raster images and update local references."""
+"""Create WebP copies of site raster images and update local references.
+
+The workflow stages all generated files, including root-level testimonial assets.
+"""
 from pathlib import Path
 import re
 from PIL import Image
