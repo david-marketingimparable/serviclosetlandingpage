@@ -7,9 +7,12 @@
   <meta name="description" content="Cocinas personalizadas para el hogar. Diseñamos, fabricamos e instalamos con materiales de alta calidad, pensados para tener durabilidad.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
   <link rel="icon" type="image/svg+xml" href="logo-servicloset.svg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="styles.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css?v=2"></noscript>
+  <link rel="preload" as="image" href="assets/cocina1.png" fetchpriority="high">
 </head>
 <body>
   <header class="site-header">
@@ -32,7 +35,7 @@
           <a class="btn btn-light" href="https://wa.me/528111742691?text=Hola%2C%20me%20interesa%20cotizar%20una%20cocina%20personalizada." target="_blank" rel="noopener">Cotizar por WhatsApp →</a>
         </div>
         <div class="hero-image">
-          <img src="assets/cocina1.png" alt="Cocina personalizada Servicloset">
+          <img src="assets/cocina1.png" alt="Cocina personalizada Servicloset" fetchpriority="high" decoding="async">
         </div>
       </div>
     </section>
@@ -40,7 +43,7 @@
     <section class="visual-price-flip" id="diseno" aria-label="Diseño 3D y precio de tu cocina">
       <div class="visual-price-flip-inner">
         <article class="visual-price-face visual-price-front" aria-hidden="false">
-          <div class="visual-price-image"><img src="assets/render.png" alt="Render del diseño de cocina antes de fabricarla" loading="lazy"></div>
+          <div class="visual-price-image"><img src="assets/render.png" alt="Render del diseño de cocina antes de fabricarla" loading="lazy" decoding="async"></div>
           <div class="visual-price-content">
             <h2>Visualiza tu cocina antes de <span class="title-accent">fabricarla.</span></h2>
             <p>Creamos un diseño 3D de tu proyecto para que puedas visualizar cómo quedará tu cocina, elegir materiales, colores y realizar ajustes antes de comenzar la fabricación.</p>
@@ -63,7 +66,7 @@
       <div class="gallery">
         <div class="gallery-main project-carousel" aria-label="Carrusel principal de proyectos de cocina">
           <div class="project-viewport">
-            <img class="project-slide active" src="assets/1.jpg" alt="Proyecto de cocina Servicloset, proyecto 1" fetchpriority="low">
+            <img class="project-slide active" src="assets/1.jpg" alt="Proyecto de cocina Servicloset, proyecto 1" fetchpriority="low" decoding="async">
             <img class="project-slide" src="assets/2.jpg" alt="Proyecto de cocina Servicloset, proyecto 2" loading="lazy">
             <img class="project-slide" src="assets/3.jpg" alt="Proyecto de cocina Servicloset, proyecto 3" loading="lazy">
             <img class="project-slide" src="assets/4.jpg" alt="Proyecto de cocina Servicloset, proyecto 4" loading="lazy">
