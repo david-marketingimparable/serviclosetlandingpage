@@ -169,7 +169,7 @@
             </div>
           </div>
           <div class="facebook-testimonial">
-            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fservicloset%2Fvideos%2F1480706102564916%2F&show_text=false&width=560" title="Testimonio en video de un cliente de Servicloset" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <button class="facebook-video-placeholder" type="button" data-load-facebook-video aria-label="Reproducir testimonio en video de Servicloset"><span class="facebook-play" aria-hidden="true">▶</span><span>Reproducir testimonio en video</span><small>El video se cargará al seleccionarlo</small></button>
           </div>
         </div>
       </div>
@@ -385,11 +385,15 @@
       let ticking = false;
       const updateParallax = () => {
         const viewport = window.innerHeight || 1;
-        parallaxImages.forEach((img) => {
+        // Leer todas las geometrías antes de escribir estilos para evitar reflows forzados.
+        const measurements = parallaxImages.map((img) => {
           const rect = img.parentElement.getBoundingClientRect();
-          if (rect.bottom < -80 || rect.top > viewport + 80) return;
-          const progress = (rect.top + rect.height / 2 - viewport / 2) / viewport;
-          img.style.setProperty("--parallax-y", (progress * -12).toFixed(1) + "px");
+          return { img, top: rect.top, bottom: rect.bottom, height: rect.height };
+        });
+        measurements.forEach(({ img, top, bottom, height }) => {
+          if (bottom < -80 || top > viewport + 80) return;
+          const progress = (top + height / 2 - viewport / 2) / viewport;
+          img.style.setProperty("--parallax-y", (progress * -8).toFixed(1) + "px");
         });
         ticking = false;
       };
@@ -480,6 +484,22 @@
   </script>
 
   <script>
+    (() => {
+      const placeholder = document.querySelector("[data-load-facebook-video]");
+      if (!placeholder) return;
+      placeholder.addEventListener("click", () => {
+        const frame = document.createElement("iframe");
+        frame.src = "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fservicloset%2Fvideos%2F1480706102564916%2F&show_text=false&width=560";
+        frame.title = "Testimonio en video de un cliente de Servicloset";
+        frame.loading = "eager";
+        frame.setAttribute("scrolling", "no");
+        frame.setAttribute("frameborder", "0");
+        frame.setAttribute("allowfullscreen", "true");
+        frame.allow = "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
+        placeholder.replaceWith(frame);
+      }, { once: true });
+    })();
+
     (() => {
       const carousel = document.querySelector(".fabrication-carousel");
       if (!carousel) return;
