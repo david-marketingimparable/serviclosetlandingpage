@@ -48,7 +48,7 @@
             <button class="btn flip-action" type="button" data-flip aria-label="Girar para ver la otra cara" title="Girar para ver la otra cara" aria-pressed="false"><span aria-hidden="true">↻</span></button>
           </div>
         </article>
-        <article class="visual-price-face visual-price-back" aria-hidden="true">
+        <article class="visual-price-face visual-price-back" aria-hidden="true" inert>
           <div class="visual-price-image"><img src="assets/cocina2.webp" alt="Proyecto de cocina integral Servicloset" loading="lazy"></div>
           <div class="visual-price-content">
             <h2>El precio que te cotizamos es el precio que <span class="title-accent">pagas.</span></h2>
@@ -335,6 +335,9 @@
           const flipped = flipSection.classList.toggle("is-flipped");
           faces.front.setAttribute("aria-hidden", flipped ? "true" : "false");
           faces.back.setAttribute("aria-hidden", flipped ? "false" : "true");
+          // inert evita que los controles de la cara oculta reciban foco o entren al árbol de accesibilidad.
+          faces.front.inert = flipped;
+          faces.back.inert = !flipped;
           flipSection.querySelectorAll("[data-flip]").forEach((control) => {
             control.setAttribute("aria-pressed", String(flipped));
           });
