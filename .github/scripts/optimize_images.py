@@ -2,7 +2,6 @@
 """Create WebP copies of site raster images and update local references."""
 from pathlib import Path
 import re
-import subprocess
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
