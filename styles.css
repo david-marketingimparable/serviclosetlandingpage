@@ -84,6 +84,7 @@
 .gallery-main{grid-row:span 2;position:relative;min-width:0;min-height:0;overflow:hidden;border-radius:2px;background:#F3F6F8}
 .project-viewport{position:relative;width:100%;height:100%;min-height:0;overflow:hidden}
 .project-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;visibility:hidden;transition:opacity .45s ease,transform .7s ease;transform:translate3d(0,var(--parallax-y,0px),0) scale(1.015)}
+.project-slide-portrait{object-position:center center}
 .project-slide.active{opacity:1;visibility:visible}
 .project-controls{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:center;justify-content:center;gap:16px;padding:12px;background:linear-gradient(0deg,rgba(18,37,53,.58),rgba(18,37,53,0));}
 .project-arrow{width:34px;height:34px;border:1px solid rgba(255,255,255,.78);border-radius:50%;background:rgba(255,255,255,.94);color:#2784BD;font-size:20px;line-height:1;cursor:pointer;transition:background .2s ease,color .2s ease,transform .2s ease}
