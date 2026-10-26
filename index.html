@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=optional">
   <link rel="icon" type="image/svg+xml" href="logo-servicloset.svg">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
   <link rel="preload" as="image" href="assets/cocina1.webp" fetchpriority="high">
 </head>
 <body>
@@ -122,15 +122,14 @@
         <h2>Somos <span class="title-accent">fabricantes.</span></h2>
         <p>Fabricamos tu cocina de principio a fin, ofreciendo materiales de alta calidad a precios competitivos.</p>
       </div>
-      <div class="media fabrication-carousel" aria-label="Etapas de fabricación de cocinas">
-        <img class="fabrication-slide active" src="assets/fabricando.webp" alt="Etapa 1: preparación y fabricación de piezas en Servicloset" loading="lazy">
+      <div class="media fabrication-carousel" aria-label="Fotografías de cocinas Servicloset">
+        <img class="fabrication-slide active" src="assets/antes2.webp" alt="Cocina integral de madera clara, vista frontal" loading="lazy">
         <div class="fabrication-controls">
-          <button class="fabrication-arrow" type="button" data-fabrication-prev aria-label="Ver etapa anterior" disabled><span aria-hidden="true">←</span></button>
-          <div class="fabrication-progress" aria-label="Progreso del proceso">
-            <span class="fabrication-step active" data-fabrication-step="0">01</span><i></i><span class="fabrication-step" data-fabrication-step="1">02</span><i></i><span class="fabrication-step" data-fabrication-step="2">03</span>
+          <button class="fabrication-arrow" type="button" data-fabrication-prev aria-label="Ver fotografía anterior" disabled><span aria-hidden="true">←</span></button>
+          <div class="fabrication-progress" aria-label="Seleccionar fotografía">
+            <span class="fabrication-step active" data-fabrication-step="0">1</span><i></i><span class="fabrication-step" data-fabrication-step="1">2</span><i></i><span class="fabrication-step" data-fabrication-step="2">3</span>
           </div>
-          <span class="fabrication-stage" data-fabrication-status aria-live="polite">Etapa 1 de 3</span>
-          <button class="fabrication-arrow" type="button" data-fabrication-next aria-label="Avanzar a la siguiente etapa"><span aria-hidden="true">→</span></button>
+          <button class="fabrication-arrow" type="button" data-fabrication-next aria-label="Ver fotografía siguiente"><span aria-hidden="true">→</span></button>
         </div>
       </div>
     </section>
@@ -509,12 +508,11 @@
       const image = carousel.querySelector(".fabrication-slide");
       const prev = carousel.querySelector("[data-fabrication-prev]");
       const next = carousel.querySelector("[data-fabrication-next]");
-      const status = carousel.querySelector("[data-fabrication-status]");
       const steps = [...carousel.querySelectorAll("[data-fabrication-step]")];
       const slides = [
-        { src: "assets/fabricando.webp", alt: "Etapa 1: preparación y fabricación de piezas en Servicloset" },
-        { src: "assets/antes2.webp", alt: "Etapa 2: cocina fabricada por Servicloset, vista frontal" },
-        { src: "assets/antes3.webp", alt: "Etapa 3: cocina fabricada por Servicloset, vista lateral" }
+        { src: "assets/antes2.webp", alt: "Cocina integral de madera clara, vista frontal" },
+        { src: "assets/antes3.webp", alt: "Cocina integral de madera clara, vista lateral" },
+        { src: "assets/fabricantes3.webp", alt: "Cocina integral de madera con isla" }
       ];
       let current = 0;
       const show = (index) => {
@@ -523,7 +521,6 @@
         image.alt = slides[current].alt;
         prev.disabled = current === 0;
         next.disabled = current === slides.length - 1;
-        status.textContent = "Etapa " + (current + 1) + " de " + slides.length;
         steps.forEach((step, i) => {
           step.classList.toggle("active", i === current);
           step.classList.toggle("completed", i < current);
