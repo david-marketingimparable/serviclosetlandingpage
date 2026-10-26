@@ -966,14 +966,14 @@ h1,h2,h3{color:#17324D}
  .fabrication-showcase .media.fabrication-carousel{aspect-ratio:4/3;}
 }
 
-/* Lista de materiales y cubiertas hasta agregar sus fotografías reales */
-.materials-categories{display:grid;grid-template-columns:1fr;gap:22px;}
-.materials-group h3{margin:0 0 10px;color:#17324D;font-size:17px;line-height:1.3;font-weight:700;}
+/* Muestras visuales de materiales y cubiertas */
+.materials-categories{display:grid;grid-template-columns:1fr;gap:24px;}
+.materials-group h3{margin:0 0 12px;color:#17324D;font-size:17px;line-height:1.3;font-weight:700;}
 .materials-group h3 span{color:#596977;font-size:.78em;font-weight:500;}
-.materials-list{display:flex;flex-wrap:wrap;gap:9px;list-style:none;margin:0;padding:0;}
-.materials-list li{padding:9px 12px;border:1px solid rgba(39,132,189,.18);border-radius:999px;background:rgba(255,255,255,.9);color:#34495a;font-size:13px;line-height:1.35;}
-@media(max-width:760px){.materials-categories{grid-template-columns:1fr;gap:18px;}.materials-group h3{font-size:16px;}.materials-list{gap:8px;}.materials-list li{font-size:12px;padding:8px 10px;}}
-.materials-photo-item{display:flex;align-items:center;gap:10px;min-height:64px;padding:5px 12px 5px 5px!important;border-radius:12px!important;background:#fff!important;}
-.materials-photo-item img{width:52px;height:52px;flex:0 0 52px;border-radius:8px;object-fit:cover;}
-.materials-photo-item span{font-size:13px;line-height:1.3;font-weight:600;color:#34495a;}
-@media(max-width:760px){.materials-photo-item span{font-size:12px;}}
+.materials-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;list-style:none;margin:0;padding:0;}
+.materials-list li.material-card{display:flex;min-width:0;flex-direction:column;align-items:stretch;gap:7px;padding:10px!important;border:1px solid rgba(39,132,189,.14);border-radius:13px!important;background:#fff!important;box-shadow:0 4px 14px rgba(23,50,77,.055);}
+.material-card h4{display:flex;align-items:flex-start;min-height:30px;margin:0;color:#17324D;font-size:12px;line-height:1.3;font-weight:700;}
+.material-card img{display:block;width:100%;aspect-ratio:1/1;border-radius:9px;object-fit:cover;background:#f1f4f5;}
+.material-card small{display:block;min-height:14px;color:#71808a;font-size:9px;line-height:1.35;}
+.material-card small a{color:#536b7d;text-decoration:underline;text-underline-offset:2px;}
+@media(max-width:760px){.materials-categories{gap:20px;}.materials-group h3{font-size:16px;}.materials-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}.materials-list li.material-card{padding:9px!important;}.material-card h4{font-size:12px;}}
