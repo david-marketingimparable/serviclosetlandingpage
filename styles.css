@@ -999,3 +999,7 @@ h1,h2,h3{color:#17324D}
 
 /* Sin animación de entrada en el contenido principal */
 .hero-copy>*{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+
+/* Degradado neutro únicamente bajo el texto; invalida la capa azul antigua */
+.hero:before{content:""!important;display:block!important;background:linear-gradient(0deg,rgba(8,16,22,.88) 0%,rgba(8,16,22,.66) 30%,rgba(8,16,22,.22) 58%,rgba(8,16,22,0) 82%)!important}
+@media(max-width:820px){.hero:before{background:linear-gradient(0deg,rgba(8,16,22,.92) 0%,rgba(8,16,22,.72) 35%,rgba(8,16,22,.24) 65%,rgba(8,16,22,0) 100%)!important}}
