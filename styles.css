@@ -1089,3 +1089,6 @@ h1,h2,h3{color:#17324D}
 .hero h1,.hero-sub,.hero-location,.hero-proof{text-shadow:0 2px 12px rgba(0,0,0,.35)}
 .hero:before{content:none!important;display:none!important}
 .hero-image::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.72) 32%,rgba(0,0,0,.38) 55%,rgba(0,0,0,0) 78%)}
+/* Cierre "¿Quieres una cocina bonita y duradera?": azul marino con degradado y todo el título en blanco */
+.closing{background:radial-gradient(800px 420px at 50% 0%,rgba(201,169,110,.16) 0%,rgba(201,169,110,0) 65%),linear-gradient(180deg,#0e2f4c 0%,#081d31 100%)!important}
+.closing h2 .title-accent{color:#fff!important}
