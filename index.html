@@ -54,9 +54,16 @@
             <img src="assets/render.webp" alt="Diseño 3D de una cocina con isla, gabinetes oscuros y acabados de madera" loading="lazy" decoding="async">
             <figcaption>El diseño</figcaption>
           </figure>
-          <figure class="design-comparison-item">
-            <img src="assets/cocina2.webp" alt="Así quedó la cocina fabricada por Servicloset" loading="lazy" decoding="async">
+          <figure class="design-comparison-item asi-carousel">
+              <img class="asi-slide active" src="assets/cocina2.webp" alt="Así quedó la cocina fabricada por Servicloset, foto 1 de 5" loading="lazy" decoding="async">
+              <img class="asi-slide" src="assets/asi-quedo-1.webp" alt="Así quedó la cocina fabricada por Servicloset, foto 2 de 5" loading="lazy" decoding="async">
+              <img class="asi-slide" src="assets/asi-quedo-2.webp" alt="Así quedó la cocina fabricada por Servicloset, foto 3 de 5" loading="lazy" decoding="async">
+              <img class="asi-slide" src="assets/asi-quedo-3.webp" alt="Así quedó la cocina fabricada por Servicloset, foto 4 de 5" loading="lazy" decoding="async">
+              <img class="asi-slide" src="assets/asi-quedo-4.webp" alt="Así quedó la cocina fabricada por Servicloset, foto 5 de 5" loading="lazy" decoding="async">
             <figcaption>Así quedó</figcaption>
+            <button class="asi-arrow asi-prev" type="button" aria-label="Foto anterior">‹</button>
+            <button class="asi-arrow asi-next" type="button" aria-label="Foto siguiente">›</button>
+            <div class="asi-dots" aria-hidden="true"></div>
           </figure>
         </div>
       </div>
@@ -435,6 +442,28 @@
 
   <script>
 
+  </script>
+
+  <script>
+    (() => {
+      const c = document.querySelector(".asi-carousel");
+      if (!c) return;
+      const slides = [...c.querySelectorAll(".asi-slide")];
+      const dotsBox = c.querySelector(".asi-dots");
+      const dots = slides.map(() => dotsBox.appendChild(document.createElement("span")));
+      let cur = 0;
+      const show = (i) => {
+        cur = (i + slides.length) % slides.length;
+        slides.forEach((s, k) => s.classList.toggle("active", k === cur));
+        dots.forEach((d, k) => d.classList.toggle("active", k === cur));
+      };
+      c.querySelector(".asi-prev").addEventListener("click", () => show(cur - 1));
+      c.querySelector(".asi-next").addEventListener("click", () => show(cur + 1));
+      let x0 = null;
+      c.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+      c.addEventListener("touchend", (e) => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); x0 = null; });
+      show(0);
+    })();
   </script>
 </body>
 </html>
