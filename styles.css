@@ -1147,3 +1147,19 @@ h1,h2,h3{color:#17324D}
   .hero-copy{padding:0 0 26px!important}
 }
 .site-header .brand{flex:0 0 auto!important;width:auto!important;min-width:0!important;margin:0 auto!important}
+/* Revisión celular: hero más compacto y simétrico, títulos centrados y sin palabras sueltas */
+@media(max-width:640px){
+  .hero,.hero-grid{min-height:560px!important;height:auto!important}
+  .hero-copy{padding:0 0 24px!important;width:100%}
+  .hero-location{margin-bottom:10px!important}
+  .hero h1{margin-bottom:12px!important}
+  .hero-sub{margin-bottom:18px!important}
+  .hero-proof{display:grid!important;grid-template-columns:1fr 1fr;gap:10px 12px!important;margin-top:18px!important;padding:0!important}
+  .hero-proof li{margin:0!important;white-space:nowrap}
+  .before-after h2,.reviews-title,.fabrication-copy h2,.projects>h2,.design-copy h2{text-align:center!important;text-wrap:balance}
+  .fabrication-copy{text-align:center!important}
+  .reviews-column{align-items:stretch}
+  .gift-highlight{display:block!important;text-align:center;font-size:16px}
+  .gift-highlight::before{margin-right:6px}
+  .site-footer{padding-bottom:84px!important}
+}
