@@ -1180,3 +1180,73 @@ h1,h2,h3{color:#17324D}
 .hero-image img{object-position:center 78%!important}
 @media(max-width:640px){.hero-image{overflow:hidden}.hero-image img{position:relative;height:140%!important;top:-40%;object-position:center 60%!important}}
 .testimonials-layout .facebook-testimonial{align-self:start!important;height:auto!important}
+
+/* ===== Ronda de diseño (comentarios de Rosy) ===== */
+/* Encabezado con más presencia y logo más grande */
+.site-header{background:#fff;box-shadow:0 4px 18px rgba(23,50,77,.08);border-bottom:3px solid #2784BD}
+.site-header .nav{min-height:84px!important;padding:12px 0!important}
+.site-header .brand{gap:14px!important;align-items:center}
+.site-header .brand-mark{width:54px!important;height:54px!important}
+.site-header .brand strong{font-size:20px!important;letter-spacing:.16em!important}
+.site-header .brand span{font-size:11px!important;letter-spacing:.32em!important}
+@media(max-width:640px){.site-header .nav{min-height:72px!important}.site-header .brand-mark{width:46px!important;height:46px!important}.site-header .brand strong{font-size:17px!important}.site-header .brand span{font-size:10px!important}}
+
+/* Hero: botón verde grande y visible */
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:#25D366!important;color:#fff!important;border-radius:10px!important;padding:17px 26px!important;font-size:16px!important;font-weight:700!important;box-shadow:0 10px 28px rgba(37,211,102,.38);text-decoration:none}
+.hero-cta:hover{background:#1EBE5A!important;transform:translateY(-2px)}
+.hero-cta .btn-wa-icon{width:22px;height:22px}
+@media(max-width:640px){.hero-cta{width:100%;justify-content:center;font-size:15px!important;padding:16px 18px!important}}
+
+/* Antes y después: banda de color en lugar de tanto blanco */
+.before-after{background:radial-gradient(900px 380px at 50% 0%,rgba(39,132,189,.16) 0%,rgba(39,132,189,0) 70%),linear-gradient(180deg,#f1f7fb 0%,#e3eef6 100%)!important;padding:48px 0!important}
+.before-after h2{margin-bottom:22px!important}
+
+/* Cómo trabajamos: tarjetas con ícono y línea que se llena al entrar en pantalla */
+#proceso .steps{gap:14px}
+#proceso .steps:before{top:30px!important;background:rgba(39,132,189,.18)!important}
+#proceso .steps:after{content:"";position:absolute;left:10%;top:30px;height:2px;width:0;background:#2784BD;z-index:0;transition:width 1.6s ease .2s}
+#proceso .steps.in-view:after{width:80%}
+#proceso .steps>li{padding:0 6px 18px!important;opacity:0;transform:translateY(18px)!important;transition:opacity .5s ease,transform .5s ease!important}
+#proceso .steps.in-view>li{opacity:1;transform:none!important}
+#proceso .steps.in-view>li:nth-child(2){transition-delay:.25s!important}
+#proceso .steps.in-view>li:nth-child(3){transition-delay:.5s!important}
+#proceso .steps.in-view>li:nth-child(4){transition-delay:.75s!important}
+#proceso .steps.in-view>li:nth-child(5){transition-delay:1s!important}
+#proceso .steps b{order:2;width:auto!important;height:auto!important;margin:12px 0 4px!important;border:0!important;background:none!important;color:#2784BD!important;font-size:11px!important;letter-spacing:.14em;box-shadow:none!important}
+#proceso .steps b:before{content:"PASO "}
+#proceso .step-icon{order:1;display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:linear-gradient(145deg,#2f95d3,#1d6fa3);border:4px solid #fff;box-shadow:0 8px 20px rgba(39,132,189,.35);transition:transform .25s ease}
+#proceso .step-icon svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#proceso .steps h3{order:3}#proceso .steps p{order:4}
+#proceso .steps>li:hover .step-icon{transform:scale(1.1)}
+#proceso .process-timeline-note{display:inline-block;margin-top:26px!important;padding:12px 22px;border-radius:999px;background:#17324D;color:#fff!important}
+#proceso{text-align:center}
+@media(max-width:820px){
+  #proceso .steps:before{left:30px!important;top:30px!important;bottom:30px!important}
+  #proceso .steps:after{left:30px;top:30px;width:2px;height:0;transition:height 1.6s ease .2s}
+  #proceso .steps.in-view:after{width:2px;height:calc(100% - 60px)}
+  #proceso .steps>li{display:grid!important;grid-template-columns:60px 1fr;column-gap:16px;align-items:start!important;text-align:left!important;padding:0 0 18px!important}
+  #proceso .step-icon{grid-row:1/span 3}
+  #proceso .steps b{margin:4px 0 2px!important}
+  #proceso .steps p{max-width:none}
+}
+@media(prefers-reduced-motion:reduce){#proceso .steps>li{opacity:1;transform:none!important;transition:none!important}#proceso .steps:after{transition:none}}
+
+/* Cotiza tu cocina: fondo con más profundidad y regalo llamativo */
+.offer{background:radial-gradient(700px 420px at 12% 20%,rgba(255,255,255,.14) 0%,rgba(255,255,255,0) 60%),radial-gradient(800px 500px at 95% 100%,rgba(9,30,52,.55) 0%,rgba(9,30,52,0) 60%),linear-gradient(135deg,#2a8bc6 0%,#1d6799 55%,#134a72 100%)!important}
+.gift-badge{position:relative;display:flex;align-items:center;gap:14px;margin:8px 0 6px;padding:16px 22px 16px 18px;border-radius:14px;background:linear-gradient(135deg,#fff7e6 0%,#ffe2a8 100%);color:#5a3a00;box-shadow:0 12px 30px rgba(0,0,0,.22);border:2px solid #f5b83d;text-align:left}
+.gift-badge .gift-icon{font-size:34px;line-height:1;animation:giftPulse 2.4s ease-in-out infinite}
+.gift-badge strong{display:block;font-size:20px;color:#7a4a00;line-height:1.15}
+.gift-badge div span{font-size:14px;color:#7a5a1a}
+.gift-tag{position:absolute;top:-11px;right:14px;padding:3px 10px;border-radius:999px;background:#e8562a;color:#fff;font:700 11px Montserrat,sans-serif;letter-spacing:.12em}
+@keyframes giftPulse{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(-8deg) scale(1.08)}}
+@media(prefers-reduced-motion:reduce){.gift-badge .gift-icon{animation:none}}
+@media(max-width:640px){.gift-badge{margin:8px auto 6px;max-width:320px}}
+#proceso .steps b:before{content:"PASO "}
+@media(max-width:820px){
+  #proceso .step-icon{grid-column:1;grid-row:1/span 3;align-self:start}
+  #proceso .steps b,#proceso .steps h3,#proceso .steps p{grid-column:2}
+  #proceso .steps b{grid-row:1}#proceso .steps h3{grid-row:2}#proceso .steps p{grid-row:3}
+}
+#proceso .steps b{display:block!important}
+#proceso .steps b:before{content:"PASO";margin-right:5px}
+@media(max-width:820px){#proceso .steps b{justify-self:start;text-align:left}}
