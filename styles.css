@@ -1163,3 +1163,14 @@ h1,h2,h3{color:#17324D}
   .gift-highlight::before{margin-right:6px}
   .site-footer{padding-bottom:84px!important}
 }
+/* Fondos alternados entre secciones para dar variación de color */
+.design-showcase{background:linear-gradient(180deg,#eaf3f9 0%,#dcebf5 100%)!important}
+.projects{position:relative;isolation:isolate}
+.projects::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#ffffff}
+.before-after{background:#ffffff!important}
+.fabrication-showcase{background:linear-gradient(160deg,#123a5c 0%,#0b2740 100%)!important}
+.fabrication-copy h2,.fabrication-copy p{color:#fff!important}
+.fabrication-copy h2 .title-accent{color:#8fcbf0!important}
+.process{position:relative;isolation:isolate}
+.process::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#ffffff}
+.testimonials{background:linear-gradient(180deg,#eaf3f9 0%,#dcebf5 100%)!important}
