@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=optional">
   <link rel="icon" type="image/svg+xml" href="logo-servicloset.svg">
-  <link rel="stylesheet" href="styles.css?v=22">
+  <link rel="stylesheet" href="styles.css?v=23">
   <link rel="preload" as="image" href="assets/hero-servicloset-v2.webp" fetchpriority="high">
 </head>
 <body>
@@ -88,23 +88,28 @@
             <button class="project-arrow" type="button" data-project-next aria-label="Ver siguiente proyecto">→</button>
           </div>
         </div>
-        <div class="gallery-before-after project-carousel" aria-label="Carrusel Antes y Después">
-          <div class="project-viewport">
-            <img class="project-slide active" src="assets/cocina4.webp" alt="Antes: cocina original del proyecto" fetchpriority="low">
-            <img class="project-slide" src="assets/cocina3.webp" alt="Después: cocina renovada del proyecto" loading="lazy">
-            <span class="project-label active" aria-hidden="true">Antes</span>
-            <span class="project-label" aria-hidden="true">Después</span>
-            <button class="image-zoom" type="button" data-image-zoom aria-label="Ampliar fotografía Antes o Después"><span aria-hidden="true">⤢</span></button>
-          </div>
-          <div class="project-controls">
-            <button class="project-arrow" type="button" data-project-prev aria-label="Ver fotografía anterior">←</button>
-            <span class="project-count" aria-live="polite">1 / 2</span>
-            <button class="project-arrow" type="button" data-project-next aria-label="Ver fotografía siguiente">→</button>
-          </div>
-        </div>
+        <div class="gallery-tile-wrap"><img class="gallery-tile" src="assets/cocina2.webp" alt="Proyecto de cocina 2" loading="lazy"><button class="image-zoom" type="button" data-image-zoom aria-label="Ampliar proyecto de cocina 2"><span aria-hidden="true">⤢</span></button></div>
         <div class="gallery-tile-wrap"><img class="gallery-tile" src="assets/cocina7.webp" alt="Proyecto de cocina 7" loading="lazy"><button class="image-zoom" type="button" data-image-zoom aria-label="Ampliar proyecto de cocina 7"><span aria-hidden="true">⤢</span></button></div>
         <div class="gallery-tile-wrap"><img class="gallery-tile" src="assets/cocina5.webp" alt="Proyecto de cocina 5" loading="lazy"><button class="image-zoom" type="button" data-image-zoom aria-label="Ampliar proyecto de cocina 5"><span aria-hidden="true">⤢</span></button></div>
         <div class="gallery-tile-wrap"><img class="gallery-tile" src="assets/cocina6.webp" alt="Proyecto de cocina 6" loading="lazy"><button class="image-zoom" type="button" data-image-zoom aria-label="Ampliar proyecto de cocina 6"><span aria-hidden="true">⤢</span></button></div>
+      </div>
+    </section>
+
+    <section class="before-after" aria-labelledby="before-after-title">
+      <div class="container">
+        <h2 id="before-after-title">De cocina vieja a <span class="title-accent">cocina nueva</span></h2>
+        <div class="ba-pair">
+          <figure class="ba-item">
+            <span class="ba-tag">Antes</span>
+            <img src="assets/cocina4.webp" alt="Antes: cocina con gabinetes blancos, cubierta oscura y piso de loseta café" loading="lazy" decoding="async">
+            <figcaption>Gabinetes blancos con molduras, cubierta oscura y piso de loseta café.</figcaption>
+          </figure>
+          <figure class="ba-item">
+            <span class="ba-tag ba-tag-after">Después</span>
+            <img src="assets/cocina3.webp" alt="Después: cocina en U con gabinetes grises, repisas de madera iluminadas y cubierta blanca" loading="lazy" decoding="async">
+            <figcaption>Cocina en U con gabinetes grises, repisas de madera con luz LED, cubierta blanca y campana de acero.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 

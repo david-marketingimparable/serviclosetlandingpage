@@ -1092,3 +1092,14 @@ h1,h2,h3{color:#17324D}
 /* Cierre "¿Quieres una cocina bonita y duradera?": azul marino con degradado y todo el título en blanco */
 .closing{background:radial-gradient(800px 420px at 50% 0%,rgba(201,169,110,.16) 0%,rgba(201,169,110,0) 65%),linear-gradient(180deg,#0e2f4c 0%,#081d31 100%)!important}
 .closing h2 .title-accent{color:#fff!important}
+
+/* Antes y después: las dos fotos lado a lado, visibles sin dar clic */
+.before-after{padding:64px 0;background:#fff}
+.before-after h2{text-align:center;margin:0 0 28px;color:#17324D;font-size:clamp(28px,3.2vw,42px)}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:0 auto}
+.ba-item{position:relative;margin:0}
+.ba-item img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;box-shadow:0 14px 34px rgba(23,50,77,.14)}
+.ba-tag{position:absolute;top:14px;left:14px;z-index:1;padding:6px 12px;border-radius:4px;background:rgba(23,50,77,.8);color:#fff;font:600 13px Montserrat,sans-serif}
+.ba-tag-after{background:#2784bd}
+.ba-item figcaption{margin-top:12px;color:#424d58;font-size:15px;line-height:1.55}
+@media(max-width:640px){.before-after{padding:44px 0}.ba-pair{gap:10px}.ba-item figcaption{font-size:12.5px}.ba-tag{font-size:11px;top:8px;left:8px;padding:4px 8px}}
