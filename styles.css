@@ -1174,3 +1174,8 @@ h1,h2,h3{color:#17324D}
 .process{position:relative;isolation:isolate}
 .process::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#ffffff}
 .testimonials{background:linear-gradient(180deg,#eaf3f9 0%,#dcebf5 100%)!important}
+/* Flechas del carrusel "Así quedó" más chicas en celular */
+@media(max-width:640px){.asi-arrow{width:28px;height:28px;font-size:18px}.asi-prev{left:8px}.asi-next{right:8px}.asi-dots{bottom:8px}.asi-dots span{width:6px;height:6px}}
+/* Hero: menos techo, que resalte la cocina */
+.hero-image img{object-position:center 78%!important}
+@media(max-width:640px){.hero-image{overflow:hidden}.hero-image img{position:relative;height:140%!important;top:-40%;object-position:center 60%!important}}
