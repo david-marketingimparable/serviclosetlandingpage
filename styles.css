@@ -1079,3 +1079,5 @@ h1,h2,h3{color:#17324D}
 .btn-wa-icon{width:20px;height:20px;fill:currentColor;flex:none}
 .closing-lead{max-width:none!important;text-wrap:balance}
 @media(min-width:821px){.closing-lead{white-space:nowrap}}
+.nav .btn-whatsapp{gap:8px}
+.nav .btn-wa-icon{width:17px;height:17px}
