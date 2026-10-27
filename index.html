@@ -305,28 +305,6 @@
       });
     })();
 
-    (() => {
-      const flipSection = document.querySelector(".visual-price-flip");
-      if (!flipSection) return;
-      const faces = {
-        front: flipSection.querySelector(".visual-price-front"),
-        back: flipSection.querySelector(".visual-price-back")
-      };
-      flipSection.querySelectorAll("[data-flip]").forEach((button) => {
-        button.addEventListener("click", () => {
-          const flipped = flipSection.classList.toggle("is-flipped");
-          faces.front.setAttribute("aria-hidden", flipped ? "true" : "false");
-          faces.back.setAttribute("aria-hidden", flipped ? "false" : "true");
-          // inert evita que los controles de la cara oculta reciban foco o entren al árbol de accesibilidad.
-          faces.front.inert = flipped;
-          faces.back.inert = !flipped;
-          flipSection.querySelectorAll("[data-flip]").forEach((control) => {
-            control.setAttribute("aria-pressed", String(flipped));
-          });
-        });
-      });
-    })();
-
     document.querySelectorAll(".project-carousel").forEach((carousel) => {
       const slides = Array.from(carousel.querySelectorAll(".project-slide"));
       const count = carousel.querySelector(".project-count");
