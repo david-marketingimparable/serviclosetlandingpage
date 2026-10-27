@@ -343,7 +343,14 @@
       const btn = document.querySelector(".whatsapp-float");
       const hero = document.querySelector(".hero");
       if (!btn || !hero) return;
-      new IntersectionObserver(([e]) => btn.classList.toggle("is-hidden", e.isIntersecting), { threshold: 0.15 }).observe(hero);
+      // Se oculta mientras se vea el hero o cualquier otro botón de WhatsApp de la página
+      const targets = [hero, ...document.querySelectorAll('a[href*="wa.me/"]:not(.whatsapp-float)')];
+      const visible = new Set();
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+        btn.classList.toggle("is-hidden", visible.size > 0);
+      }, { threshold: 0.15 });
+      targets.forEach((t) => io.observe(t));
     })();
   </script>
 </body>
