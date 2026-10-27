@@ -1083,3 +1083,9 @@ h1,h2,h3{color:#17324D}
 .nav .btn-wa-icon{width:17px;height:17px}
 .offer .btn-whatsapp{gap:10px}
 @media(min-width:640px){.closing-lead{white-space:nowrap}}
+/* Hero: foto con color real (sin capa azul) y degradado oscuro solo en la parte inferior, detrás del texto */
+.hero-grid:before,.hero-grid::before{content:none!important;display:none!important;background:none!important}
+.hero:before{content:""!important;display:block!important;background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.78) 35%,rgba(0,0,0,.5) 58%,rgba(0,0,0,0) 85%)!important;z-index:1!important}
+.hero h1,.hero-sub,.hero-location,.hero-proof{text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.hero:before{content:none!important;display:none!important}
+.hero-image::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.72) 32%,rgba(0,0,0,.38) 55%,rgba(0,0,0,0) 78%)}
