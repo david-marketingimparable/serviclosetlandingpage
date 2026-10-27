@@ -1075,3 +1075,7 @@ h1,h2,h3{color:#17324D}
 .closing .closing-inner{grid-template-columns:1fr!important;text-align:center;justify-items:center}
 .closing .closing-inner>div:first-child{display:flex;flex-direction:column;align-items:center}
 .closing .btn-light{align-self:center!important}
+.closing .btn-light{gap:10px}
+.btn-wa-icon{width:20px;height:20px;fill:currentColor;flex:none}
+.closing-lead{max-width:none!important;text-wrap:balance}
+@media(min-width:821px){.closing-lead{white-space:nowrap}}
