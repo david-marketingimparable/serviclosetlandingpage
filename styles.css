@@ -1070,3 +1070,8 @@ h1,h2,h3{color:#17324D}
 .asi-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55)}
 .asi-dots span.active{background:#fff}
 @media(prefers-reduced-motion:reduce){.asi-carousel .asi-slide{transition:none}}
+
+/* Cierre sin formulario: una sola columna centrada */
+.closing .closing-inner{grid-template-columns:1fr!important;text-align:center;justify-items:center}
+.closing .closing-inner>div:first-child{display:flex;flex-direction:column;align-items:center}
+.closing .btn-light{align-self:center!important}
