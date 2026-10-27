@@ -1116,3 +1116,5 @@ h1,h2,h3{color:#17324D}
 .mosaic-p2 img{aspect-ratio:2/3}
 .mosaic-p2 img.wide{grid-column:span 2;aspect-ratio:4/3}
 @media(max-width:640px){.mosaic{gap:8px}.mosaic-p1{grid-template-columns:repeat(2,minmax(0,1fr))}.mosaic-p2{grid-template-columns:repeat(2,minmax(0,1fr))}.mosaic img{border-radius:7px}}
+.mosaic-p2{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:640px){.mosaic-p2{grid-template-columns:repeat(2,minmax(0,1fr))}}
