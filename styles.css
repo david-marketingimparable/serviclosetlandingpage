@@ -996,3 +996,6 @@ h1,h2,h3{color:#17324D}
 .hero-image img{opacity:1!important;filter:none!important;mix-blend-mode:normal!important}
 .hero-proof{list-style:none!important}
 .hero-proof svg{fill:none!important;stroke:#fff!important}
+
+/* Sin animación de entrada en el contenido principal */
+.hero-copy>*{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}

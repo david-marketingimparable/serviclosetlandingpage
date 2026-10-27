@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=optional">
   <link rel="icon" type="image/svg+xml" href="logo-servicloset.svg">
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
   <link rel="preload" as="image" href="assets/hero-servicloset-v2.webp" fetchpriority="high">
 </head>
 <body>
@@ -34,7 +34,7 @@
             <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l8-4 8 4v12M8 20v-6h8v6M7 9h.01M12 9h.01M17 9h.01"/></svg><span>Fabricantes</span></li>
             <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 16l5-5 3 3 6-7M15 7h4v4"/></svg><span>Diseño 3D</span></li>
             <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6M12 3a9 9 0 1 0 9 9"/></svg><span>Instalación incluida</span></li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M17 7c0-2-2-3-5-3S7 5 7 7s2 3 5 4 5 2 5 4-2 4-5 4-5-1-5-3"/></svg><span>+30 años</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"/><path d="M12 7v5l3 2"/></svg><span>+30 años</span></li>
           </ul>
         </div>
         <div class="hero-image">
@@ -331,7 +331,7 @@
     (() => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduceMotion) return;
-      const targets = document.querySelectorAll(".hero-copy > *, .content > *, .projects > h2, .gallery > img, .project-carousel, .steps > div, .offer-grid > div, .closing-inner > div");
+      const targets = document.querySelectorAll(".content > *, .projects > h2, .gallery > img, .project-carousel, .steps > div, .offer-grid > div, .closing-inner > div");
       document.body.classList.add("motion-ready");
       targets.forEach((el, index) => {
         el.classList.add("scroll-reveal");
