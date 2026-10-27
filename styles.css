@@ -1049,7 +1049,7 @@ h1,h2,h3{color:#17324D}
 .offer-inner{max-width:720px;margin:0 auto;padding:64px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
 .offer-inner h2{margin:0}
 .offer-inner p{margin:0;max-width:560px}
-.offer-inner .gift{margin-top:10px;text-align:left}
+.offer-inner .gift{margin:6px 0 4px;text-align:left}
 .offer .btn-whatsapp,.closing .btn-light{background:#25D366!important;color:#fff!important;border-radius:9px;padding:16px 26px;font-size:14px;box-shadow:0 8px 22px rgba(0,0,0,.18)}
 .offer .btn-whatsapp:hover,.closing .btn-light:hover{background:#1EBE5A!important}
 @media(max-width:560px){.offer-inner{width:calc(100% - 40px);padding:44px 0}.offer .btn-whatsapp{width:100%}}
