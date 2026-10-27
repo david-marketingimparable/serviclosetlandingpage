@@ -137,22 +137,25 @@
       <div class="container testimonials-inner">
         <div class="testimonials-layout">
           <div class="reviews-column">
-            <h2 class="reviews-title">Opiniones de nuestros <span class="title-accent">clientes:</span></h2>
-            <div class="review-slider" aria-label="Opiniones de clientes de Google">
-              <div class="review-frame">
-              <img class="review-slide active" src="testimonio%201%20servicloset.webp" alt="Opinión de una clienta de Servicloset" loading="lazy">
-              <img class="review-slide" src="testimonio%202%20servicloset.webp" alt="Opinión de un cliente de Servicloset" loading="lazy">
-              <img class="review-slide" src="testimonio%203%20servicloset.webp" alt="Opinión de un cliente de Servicloset" loading="lazy">
-              </div>
-              <div class="review-controls">
-                <button class="review-arrow" type="button" data-review-prev aria-label="Ver opinión anterior">←</button>
-                <span class="review-count" aria-live="polite">1 / 3</span>
-                <button class="review-arrow" type="button" data-review-next aria-label="Ver siguiente opinión">→</button>
-              </div>
-            </div>
+            <h2 class="reviews-title"><span class="title-accent">3.4 ★</span> en Google · 27 reseñas</h2>
+            <article class="review-card">
+              <header class="review-head">
+                <span class="review-avatar" aria-hidden="true">A</span>
+                <div><strong>Abraham Martínez</strong><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div>
+              </header>
+              <p>“Me hicieron un diseño que a mí y a mi esposa nos gustó. Los materiales son de alta calidad, me entregaron a tiempo y quedó exactamente como el diseño propuesto. 100% recomendables.”</p>
+            </article>
+            <article class="review-card">
+              <header class="review-head">
+                <span class="review-avatar" aria-hidden="true">J</span>
+                <div><strong>Jesús Roberto Moncada</strong><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div>
+              </header>
+              <p>“Excelente atención y explicación de las cocinas y clósets que allí ofrecen. Te aconsejan y recomiendan lo mejor para tu casa.”</p>
+            </article>
+            <a class="reviews-link" href="https://www.google.com/maps/search/Servicloset+%26+Home+Guadalupe+N.L." target="_blank" rel="noopener">Ver todas las reseñas en Google →</a>
           </div>
           <div class="facebook-testimonial">
-            <button class="facebook-video-placeholder" type="button" data-load-facebook-video aria-label="Reproducir testimonio en video de Servicloset"><span class="facebook-play" aria-hidden="true">▶</span><span>Reproducir testimonio en video</span><small>El video se cargará al seleccionarlo</small></button>
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fservicloset%2Fvideos%2F1480706102564916%2F&show_text=false&width=720&height=720" title="Testimonio en video de un cliente de Servicloset" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
         </div>
       </div>
@@ -370,24 +373,6 @@
       updateParallax();
     })();
 
-    (() => {
-      const slider = document.querySelector(".review-slider");
-      if (!slider) return;
-      const slides = Array.from(slider.querySelectorAll(".review-slide"));
-      const count = slider.querySelector(".review-count");
-      let current = 0;
-      const show = (index) => {
-        current = (index + slides.length) % slides.length;
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === current);
-          slide.setAttribute("aria-hidden", i === current ? "false" : "true");
-        });
-        count.textContent = (current + 1) + " / " + slides.length;
-      };
-      slider.querySelector("[data-review-prev]").addEventListener("click", () => show(current - 1));
-      slider.querySelector("[data-review-next]").addEventListener("click", () => show(current + 1));
-      show(0);
-    })();
 
     (() => {
     (() => {
@@ -448,21 +433,6 @@
   </script>
 
   <script>
-    (() => {
-      const placeholder = document.querySelector("[data-load-facebook-video]");
-      if (!placeholder) return;
-      placeholder.addEventListener("click", () => {
-        const frame = document.createElement("iframe");
-        frame.src = "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fservicloset%2Fvideos%2F1480706102564916%2F&show_text=false&width=560";
-        frame.title = "Testimonio en video de un cliente de Servicloset";
-        frame.loading = "eager";
-        frame.setAttribute("scrolling", "no");
-        frame.setAttribute("frameborder", "0");
-        frame.setAttribute("allowfullscreen", "true");
-        frame.allow = "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
-        placeholder.replaceWith(frame);
-      }, { once: true });
-    })();
 
   </script>
 </body>
