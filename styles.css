@@ -990,3 +990,9 @@ h1,h2,h3{color:#17324D}
  .hero-image img{object-position:center 42%}
 }
 @media(prefers-reduced-motion:reduce){.hero-copy .btn-light{transition:none}}
+
+/* Aplicar los estilos renovados del hero con caché actualizada */
+.hero-image{z-index:0!important}
+.hero-image img{opacity:1!important;filter:none!important;mix-blend-mode:normal!important}
+.hero-proof{list-style:none!important}
+.hero-proof svg{fill:none!important;stroke:#fff!important}
