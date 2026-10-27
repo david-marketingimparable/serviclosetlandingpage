@@ -938,3 +938,55 @@ h1,h2,h3{color:#17324D}
 @media(max-width:760px){.materials-categories{gap:20px;}.materials-group h3{font-size:16px;}.materials-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;}.materials-list li.material-card{padding:10px!important;}.material-card h4{font-size:13px;min-height:36px;}}
 @media(max-width:380px){.materials-list li.material-card{padding:8px!important;}.material-card h4{font-size:12px;}}
 @media(prefers-reduced-motion:reduce){.materials-list li.material-card{transition:none;}}
+
+
+/* Hero actualizado: fotografía real a color, con contraste solo en la zona inferior */
+.site-header{position:sticky;top:0;z-index:50}
+.nav .btn-whatsapp{white-space:nowrap;padding:12px 17px;font-size:12px}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(660px,58vw,840px);background:#17232b;color:#fff}
+.hero:before{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(8,16,22,.86) 0%,rgba(8,16,22,.68) 28%,rgba(8,16,22,.28) 52%,rgba(8,16,22,0) 78%)}
+.hero-grid{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:flex-start;width:100%;max-width:none;min-height:inherit;margin:0;padding:0 clamp(24px,6vw,96px)}
+.hero-copy{position:relative;z-index:2;width:min(100%,980px);max-width:980px;margin:0;padding:0 0 42px;align-self:flex-end;transform:none;color:#fff;isolation:auto}
+.hero-copy:before{content:none!important}
+.hero-location{color:#fff;font-size:14px;font-weight:600;letter-spacing:.02em;margin:0 0 16px}
+.hero-copy h1{max-width:870px;color:#fff;font-size:clamp(44px,5.2vw,76px);line-height:1.04;letter-spacing:-.045em;margin:0 0 18px;font-weight:600}
+.hero-copy h1 .title-accent{color:#fff}
+.hero-sub{max-width:700px;color:rgba(255,255,255,.93);font-size:clamp(16px,1.2vw,19px);line-height:1.6;margin:0 0 23px}
+.hero-copy .btn-light{background:#168BD2;color:#fff;border-radius:8px;padding:15px 21px;box-shadow:0 7px 20px rgba(0,0,0,.15)}
+.hero-copy .btn-light:hover{background:#25A0E7}
+.hero-proof{display:flex;align-items:center;flex-wrap:wrap;gap:12px 28px;list-style:none;margin:26px 0 0;padding:0}
+.hero-proof li{display:flex;align-items:center;gap:8px;color:#fff;font-size:13px;font-weight:600}
+.hero-proof svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.hero-image{position:absolute;z-index:0;inset:0;width:100%;height:100%;min-height:0;overflow:hidden;border-radius:0;box-shadow:none}
+.hero-image img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center 56%;transform:none!important;will-change:auto}
+@media(max-width:820px){
+ .hero{min-height:max(700px,calc(100svh - 70px))}
+ .hero:before{background:linear-gradient(0deg,rgba(8,16,22,.91) 0%,rgba(8,16,22,.77) 35%,rgba(8,16,22,.30) 65%,rgba(8,16,22,0) 100%)}
+ .hero-grid{width:100%;max-width:none;padding:0 28px}
+ .hero-copy{width:100%;max-width:700px;padding:0 0 34px}
+ .hero-copy h1{font-size:clamp(40px,7vw,58px);max-width:700px}
+ .hero-sub{font-size:16px;max-width:620px}
+ .hero-image{inset:0;height:100%;width:100%;margin:0}
+ .hero-image img{object-position:center 48%}
+}
+@media(max-width:520px){
+ .nav{height:66px;gap:10px}
+ .brand{min-width:0;gap:8px}
+ .brand-mark{width:36px;height:36px}
+ .brand strong{font-size:12px}
+ .brand span{font-size:8px}
+ .nav .btn-whatsapp{padding:10px 11px;font-size:10px;letter-spacing:0}
+ .hero{min-height:max(730px,calc(100svh - 66px))}
+ .hero:before{background:linear-gradient(0deg,rgba(8,16,22,.94) 0%,rgba(8,16,22,.82) 37%,rgba(8,16,22,.36) 68%,rgba(8,16,22,0) 100%)}
+ .hero-grid{padding:0 22px}
+ .hero-copy{padding-bottom:28px}
+ .hero-location{font-size:12px;margin-bottom:12px}
+ .hero-copy h1{font-size:clamp(36px,10vw,48px);line-height:1.06;margin-bottom:14px}
+ .hero-sub{font-size:14px;line-height:1.58;margin-bottom:18px}
+ .hero-copy .btn-light{padding:13px 15px;font-size:11px}
+ .hero-proof{gap:11px 15px;margin-top:20px}
+ .hero-proof li{font-size:11px;gap:6px}
+ .hero-proof svg{width:16px;height:16px}
+ .hero-image img{object-position:center 42%}
+}
+@media(prefers-reduced-motion:reduce){.hero-copy .btn-light{transition:none}}

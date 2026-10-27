@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=optional">
   <link rel="icon" type="image/svg+xml" href="logo-servicloset.svg">
   <link rel="stylesheet" href="styles.css?v=13">
-  <link rel="preload" as="image" href="assets/cocina1.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-servicloset.jpg" fetchpriority="high">
 </head>
 <body>
   <header class="site-header">
@@ -18,22 +18,27 @@
       <a class="brand" href="#inicio" aria-label="Servicloset & Home">
         <img class="brand-mark" src="logo-servicloset.svg" alt="" aria-hidden="true">
         <div><strong>SERVICLOSET</strong><span>& HOME</span></div>
-      </a> <a class="btn btn-whatsapp" href="https://wa.me/528111742691?text=Hola%2C%20me%20interesa%20cotizar%20una%20cocina%20personalizada." target="_blank" rel="noopener">Enviar mensaje por WhatsApp →</a>
+      </a> <a class="btn btn-whatsapp" href="https://wa.me/528111742691?text=Hola%2C%20me%20interesa%20cotizar%20una%20cocina%20personalizada." target="_blank" rel="noopener">Cotiza por WhatsApp</a>
     </div>
   </header>
 
   <main id="inicio">
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="hero-location">Monterrey y área metropolitana.</p>
-          <h1>Diseñamos y fabricamos <span class="title-accent">tu cocina a la medida.</span></h1>
-          <p class="hero-sub">Hechas con materiales de alta calidad, pensadas no solo para verse bien, también para durar.</p>
-          <div class="hero-proof"><div><strong>+30 años de experiencia</strong></div></div>
-          <a class="btn btn-light" href="https://wa.me/528111742691?text=Hola%2C%20me%20interesa%20cotizar%20una%20cocina%20personalizada." target="_blank" rel="noopener">Cotizar por WhatsApp →</a>
+          <p class="hero-location">Cocinas a la medida · Monterrey</p>
+          <h1 id="hero-title">Fabricamos cocinas integrales <span class="title-accent">a la medida</span></h1>
+          <p class="hero-sub">Para casas en Monterrey y área metropolitana. Diseño 3D antes de fabricar. Cotización por escrito.</p>
+          <a class="btn btn-light" href="https://wa.me/528111742691?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20visita%20para%20cotizar%20mi%20cocina." target="_blank" rel="noopener">Agenda tu visita por WhatsApp</a>
+          <ul class="hero-proof" aria-label="Lo que ofrecemos">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l8-4 8 4v12M8 20v-6h8v6M7 9h.01M12 9h.01M17 9h.01"/></svg><span>Fabricantes</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 16l5-5 3 3 6-7M15 7h4v4"/></svg><span>Diseño 3D</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6M12 3a9 9 0 1 0 9 9"/></svg><span>Instalación incluida</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M17 7c0-2-2-3-5-3S7 5 7 7s2 3 5 4 5 2 5 4-2 4-5 4-5-1-5-3"/></svg><span>+30 años</span></li>
+          </ul>
         </div>
         <div class="hero-image">
-          <img src="assets/cocina1.webp" alt="Cocina personalizada Servicloset" fetchpriority="high" decoding="async">
+          <img src="assets/hero-servicloset.jpg" alt="Cocina integral real de Servicloset con isla, muebles de madera e iluminación cálida" fetchpriority="high" loading="eager" decoding="async">
         </div>
       </div>
     </section>
