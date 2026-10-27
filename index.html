@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=optional">
   <link rel="icon" type="image/svg+xml" href="logo-servicloset.svg">
-  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="stylesheet" href="styles.css?v=18">
   <link rel="preload" as="image" href="assets/hero-servicloset-v2.webp" fetchpriority="high">
 </head>
 <body>
@@ -103,19 +103,16 @@
 
 
 
-    <section class="split fabrication-showcase">
-      <div class="content">
-        <h2>Somos <span class="title-accent">fabricantes.</span></h2>
-        <p>Fabricamos tu cocina de principio a fin, ofreciendo materiales de alta calidad a precios competitivos.</p>
-      </div>
-      <div class="media fabrication-carousel" aria-label="Fotografías de cocinas Servicloset">
-        <img class="fabrication-slide active" src="assets/antes3.webp" alt="Cocina integral de madera clara, vista lateral" loading="lazy">
-        <div class="fabrication-controls">
-          <button class="fabrication-arrow" type="button" data-fabrication-prev aria-label="Ver fotografía anterior" disabled><span aria-hidden="true">←</span></button>
-          <div class="fabrication-progress" aria-label="Seleccionar fotografía">
-            <span class="fabrication-step active" data-fabrication-step="0">1</span><i></i><span class="fabrication-step" data-fabrication-step="1">2</span><i></i><span class="fabrication-step" data-fabrication-step="2">3</span>
-          </div>
-          <button class="fabrication-arrow" type="button" data-fabrication-next aria-label="Ver fotografía siguiente"><span aria-hidden="true">→</span></button>
+    <section class="fabrication-showcase" aria-labelledby="fabrication-title">
+      <div class="fabrication-inner">
+        <div class="fabrication-copy">
+          <h2 id="fabrication-title">Somos <span class="title-accent">fabricantes</span></h2>
+          <p>Fabricamos tu cocina en nuestro taller, sin intermediarios. Llevamos más de 30 años en esto.</p>
+        </div>
+        <div class="fabrication-photos" aria-label="Trabajo y fabricación en el taller Servicloset">
+          <img src="assets/taller-maquinaria.webp" alt="Fabricación de piezas de cocina con maquinaria de corte en el taller" loading="lazy" decoding="async">
+          <img src="assets/taller-trabajo.webp" alt="Colaborador preparando módulos de cocina en el taller" loading="lazy" decoding="async">
+          <img src="assets/taller-produccion.webp" alt="Módulos de cocina en proceso dentro del taller" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -466,34 +463,6 @@
       }, { once: true });
     })();
 
-    (() => {
-      const carousel = document.querySelector(".fabrication-carousel");
-      if (!carousel) return;
-      const image = carousel.querySelector(".fabrication-slide");
-      const prev = carousel.querySelector("[data-fabrication-prev]");
-      const next = carousel.querySelector("[data-fabrication-next]");
-      const steps = [...carousel.querySelectorAll("[data-fabrication-step]")];
-      const slides = [
-        { src: "assets/antes3.webp", alt: "Cocina integral de madera clara, vista lateral" },
-        { src: "assets/antes2.webp", alt: "Cocina integral de madera clara, vista frontal" },
-        { src: "assets/fabricantes3.webp", alt: "Cocina integral de madera con isla" }
-      ];
-      let current = 0;
-      const show = (index) => {
-        current = Math.max(0, Math.min(slides.length - 1, index));
-        image.src = slides[current].src;
-        image.alt = slides[current].alt;
-        prev.disabled = current === 0;
-        next.disabled = current === slides.length - 1;
-        steps.forEach((step, i) => {
-          step.classList.toggle("active", i === current);
-          step.classList.toggle("completed", i < current);
-          step.setAttribute("aria-current", i === current ? "step" : "false");
-        });
-      };
-      prev.addEventListener("click", () => show(current - 1));
-      next.addEventListener("click", () => show(current + 1));
-    })();
   </script>
 </body>
 </html>

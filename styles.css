@@ -1003,3 +1003,17 @@ h1,h2,h3{color:#17324D}
 /* Degradado neutro únicamente bajo el texto; invalida la capa azul antigua */
 .hero:before{content:""!important;display:block!important;background:linear-gradient(0deg,rgba(8,16,22,.88) 0%,rgba(8,16,22,.66) 30%,rgba(8,16,22,.22) 58%,rgba(8,16,22,0) 82%)!important}
 @media(max-width:820px){.hero:before{background:linear-gradient(0deg,rgba(8,16,22,.92) 0%,rgba(8,16,22,.72) 35%,rgba(8,16,22,.24) 65%,rgba(8,16,22,0) 100%)!important}}
+
+
+/* Galería fija del taller: tres fotos sin carrusel ni controles */
+.fabrication-showcase{display:block!important;min-height:0!important;padding:clamp(48px,6vw,82px) 0;background:#F4F9FC!important;}
+.fabrication-inner{width:min(calc(100% - 64px),1320px);margin:0 auto;}
+.fabrication-copy{max-width:820px;margin:0 auto 30px;text-align:center;}
+.fabrication-copy h2{margin:0 0 14px;color:#17324D;font-size:clamp(34px,4vw,56px);line-height:1.1;letter-spacing:-.04em;font-weight:600;}
+.fabrication-copy h2 .title-accent{color:#2784BD;}
+.fabrication-copy p{margin:0;color:#52606C;font-size:clamp(15px,1.2vw,18px);line-height:1.65;}
+.fabrication-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+.fabrication-photos img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center;border:1px solid rgba(39,132,189,.1);border-radius:12px;background:#e6edf1;box-shadow:0 10px 26px rgba(23,50,77,.11);}
+@media(max-width:820px){.fabrication-inner{width:calc(100% - 48px);}.fabrication-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;}.fabrication-photos img:last-child{grid-column:1/-1;width:calc(50% - 7px);justify-self:center;}}
+@media(max-width:600px){.fabrication-showcase{padding:44px 0!important;}.fabrication-inner{width:calc(100% - 40px);}.fabrication-copy{margin-bottom:22px;text-align:left;}.fabrication-copy h2{font-size:clamp(32px,9vw,42px);}.fabrication-copy p{font-size:14px;}.fabrication-photos{grid-template-columns:1fr;gap:12px;}.fabrication-photos img:last-child{grid-column:auto;width:100%;}.fabrication-photos img{aspect-ratio:16/10;border-radius:9px;}}
+@media(prefers-reduced-motion:reduce){.fabrication-photos img{scroll-behavior:auto;}}
