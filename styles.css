@@ -1179,3 +1179,4 @@ h1,h2,h3{color:#17324D}
 /* Hero: menos techo, que resalte la cocina */
 .hero-image img{object-position:center 78%!important}
 @media(max-width:640px){.hero-image{overflow:hidden}.hero-image img{position:relative;height:140%!important;top:-40%;object-position:center 60%!important}}
+.testimonials-layout .facebook-testimonial{align-self:start!important;height:auto!important}
