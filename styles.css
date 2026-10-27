@@ -1103,3 +1103,16 @@ h1,h2,h3{color:#17324D}
 .ba-tag-after{background:#2784bd}
 .ba-item figcaption{margin-top:12px;color:#424d58;font-size:15px;line-height:1.55}
 @media(max-width:640px){.before-after{padding:44px 0}.ba-pair{gap:10px}.ba-item figcaption{font-size:12.5px}.ba-tag{font-size:11px;top:8px;left:8px;padding:4px 8px}}
+
+/* Nuestros proyectos: mosaico por proyecto, sin carrusel */
+.project-block{margin-top:28px}
+.project-block+.project-block{margin-top:44px}
+.project-name{margin:0 0 14px;color:#17324D;font-size:18px;font-weight:600;letter-spacing:.01em}
+.mosaic{display:grid;gap:12px}
+.mosaic img{display:block;width:100%;height:100%;object-fit:cover;border-radius:10px;box-shadow:0 8px 22px rgba(23,50,77,.10)}
+.mosaic-p1{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mosaic-p1 img{aspect-ratio:4/5}
+.mosaic-p2{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:dense}
+.mosaic-p2 img{aspect-ratio:2/3}
+.mosaic-p2 img.wide{grid-column:span 2;aspect-ratio:4/3}
+@media(max-width:640px){.mosaic{gap:8px}.mosaic-p1{grid-template-columns:repeat(2,minmax(0,1fr))}.mosaic-p2{grid-template-columns:repeat(2,minmax(0,1fr))}.mosaic img{border-radius:7px}}
