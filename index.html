@@ -259,8 +259,11 @@
         if (!im.alt) return;
         im.closest(".frame, .g-item").classList.add("zoomable");
         im.addEventListener("click", () => {
+          // En el carrusel "Así quedó" se recorren sus 5 fotos; en lo demás, las fotos de la sección
           const sec = im.closest("section");
-          group = [...sec.querySelectorAll(".frame img, .g-item img")].filter((x) => x.alt && (!x.classList.contains("asi-slide") || x.classList.contains("active")));
+          group = im.classList.contains("asi-slide")
+            ? [...im.closest(".asi-carousel").querySelectorAll(".asi-slide")]
+            : [...sec.querySelectorAll(".frame img, .g-item img")].filter((x) => x.alt && !x.classList.contains("asi-slide"));
           lbShow(group.indexOf(im));
           lb.showModal();
         });
