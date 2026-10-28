@@ -289,3 +289,4 @@ h1 em, h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
   .lb-next { right: calc(50% - 56px); }
 }
 .asi-carousel .asi-slide:not(.active) { pointer-events: none; }
+.trio .frame img { aspect-ratio: 1 / 1; object-position: center 45%; }
