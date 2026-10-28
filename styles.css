@@ -13,7 +13,7 @@
   --wa: #25d366;
   --wa-dark: #1ebe5a;
   --radius: 18px;
-  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --serif: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
   --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
   --ease: cubic-bezier(.22, .61, .36, 1);
 }
@@ -29,10 +29,10 @@ a { color: inherit; }
 .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
 
 /* Tipografía */
-h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; line-height: 1.05; text-wrap: balance; }
-h1 { font-size: clamp(42px, 6.4vw, 84px); color: #fff; }
-h2 { font-size: clamp(34px, 4.4vw, 58px); color: var(--ink); }
-h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--gold); }
+h1, h2 { font-family: var(--serif); font-weight: 700; letter-spacing: -.025em; line-height: 1.1; text-wrap: balance; }
+h1 { font-size: clamp(38px, 5.4vw, 70px); color: #fff; }
+h2 { font-size: clamp(30px, 3.6vw, 48px); color: var(--ink); }
+h1 em, h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
 .eyebrow { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 18px; color: var(--gold-soft); font: 600 12px/1 var(--sans); letter-spacing: .28em; text-transform: uppercase; }
 .eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; }
 .eyebrow-dark { color: var(--gold); }
@@ -137,9 +137,9 @@ h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--gold); }
 .steps li:hover .step-icon { transform: translateY(-4px); background: var(--ink); }
 .steps li:hover .step-icon svg { stroke: var(--gold-soft); }
 .steps b { color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
-.steps h3 { margin: 6px 0; color: var(--ink); font: 600 26px/1.1 var(--serif); }
+.steps h3 { margin: 6px 0; color: var(--ink); font: 700 18px/1.2 var(--sans); }
 .steps p { max-width: 200px; color: var(--muted); font-size: 14px; line-height: 1.55; }
-.pill-note { display: table; margin: 48px auto 0; padding: 14px 26px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 600; }
+.pill-note { margin: 48px auto 0; color: var(--ink); font-size: 18px; font-weight: 700; text-align: center; }
 
 /* Testimonios */
 .reviews-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(20px, 3vw, 40px); align-items: start; }
@@ -163,7 +163,7 @@ h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--gold); }
 .offer-grid .glass-panel p { margin-bottom: 4px; }
 .gift { position: relative; display: flex; align-items: center; gap: 14px; margin: 26px 0 26px; padding: 18px 22px; border: 1px solid rgba(233, 214, 176, .55); border-radius: 16px; background: linear-gradient(135deg, rgba(233, 214, 176, .22), rgba(198, 164, 108, .12)); color: #fff; }
 .gift-ico { font-size: 32px; line-height: 1; animation: float 3s ease-in-out infinite; }
-.gift strong { display: block; color: var(--gold-soft); font: 600 26px/1.1 var(--serif); }
+.gift strong { display: block; color: var(--gold-soft); font: 700 20px/1.2 var(--sans); }
 .gift div span { font-size: 14px; color: rgba(255, 255, 255, .8); }
 .gift-tag { position: absolute; top: -10px; right: 16px; padding: 4px 10px; border-radius: 999px; background: var(--gold); color: var(--ink); font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
 .mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -212,7 +212,7 @@ h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--gold); }
   .hero { min-height: 640px; height: 100svh; max-height: 760px; }
   .hero-media img { object-position: center 75%; }
   .hero-inner { padding: 110px 0 36px; }
-  .hero h1 { font-size: 44px; }
+  .hero h1 { font-size: 36px; }
   .hero-sub { font-size: 16px; margin-bottom: 24px; }
   .btn-lg { width: 100%; padding: 17px 20px; font-size: 15px; }
   .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 22px; }
@@ -220,7 +220,7 @@ h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--gold); }
   .chips svg { width: 15px; height: 15px; flex: none; }
   .eyebrow { gap: 8px; font-size: 10px; letter-spacing: .2em; }
   .eyebrow::before { width: 20px; }
-  h2 { font-size: 36px; }
+  h2 { font-size: 30px; }
   .duo, .trio { grid-template-columns: 1fr 1fr; gap: 10px; }
   .trio .frame:last-child { grid-column: span 2; }
   .glass-tag { top: 10px; left: 10px; padding: 6px 10px; font-size: 10px; }
