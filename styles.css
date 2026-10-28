@@ -291,3 +291,10 @@ h1 em, h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
 .asi-carousel .asi-slide:not(.active) { pointer-events: none; }
 .trio .frame img { aspect-ratio: 1 / 1; object-position: center 45%; }
 @media (min-width: 641px) { #fab-title em { display: block; } .band .glass-center { max-width: 760px; } }
+
+/* Recuadro del regalo: compacto, texto centrado y ícono grande */
+.gift { display: flex; align-items: center; justify-content: center; gap: 16px; width: fit-content; max-width: 100%; margin: 26px 0; padding: 14px 24px; text-align: center; }
+.gift-ico { flex: none; font-size: 46px; line-height: 1; }
+.gift p { margin: 0; color: rgba(255, 255, 255, .92); font-size: 16px; font-weight: 500; line-height: 1.4; text-align: center; }
+.gift p strong { display: inline; color: var(--gold-soft); font: 700 16px/1.4 var(--sans); }
+@media (max-width: 640px) { .gift { margin: 22px auto; padding: 12px 18px; gap: 14px; } .gift-ico { font-size: 42px; } .gift p { font-size: 15px; } .gift p strong { font-size: 15px; } }
