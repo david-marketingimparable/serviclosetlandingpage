@@ -293,10 +293,10 @@ h1 em, h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
 .gp-text { display: flex; flex-direction: column; line-height: 1.25; }
 .gp-text strong { color: #eec26f; font: 700 22px/1.2 var(--sans); }
 .gp-text span { color: rgba(255, 255, 255, .85); font-size: 16px; }
-.btn-offer { display: flex; width: min(100%, 540px); justify-content: center; gap: 12px; padding: 20px 26px; border-radius: 999px; font-size: 18px; }
+.btn-offer { display: inline-flex; width: auto; max-width: 100%; justify-content: center; gap: 14px; padding: 20px 36px; border-radius: 999px; font-size: 18px; }
 .btn-offer .wa-ico { width: 30px; height: 30px; }
-.btn-offer .chev { width: 22px; height: 22px; margin-left: auto; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s var(--ease); }
-.btn-offer span { margin-right: auto; margin-left: 4px; }
+.btn-offer .chev { width: 22px; height: 22px; margin-left: 2px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s var(--ease); }
+.btn-offer span { margin: 0; white-space: nowrap; }
 .btn-offer:hover .chev { transform: translateX(4px); }
 .offer-photos { position: relative; display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr; }
 .offer-photos { min-height: 0; }
@@ -313,10 +313,12 @@ h1 em, h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
   .gp-text { text-align: left; }
   .gp-text strong { font-size: 19px; }
   .gp-text span { font-size: 14px; }
-  .btn-offer { margin-inline: auto; padding: 16px 20px; font-size: 15px; }
+  .btn-offer { display: flex; width: 100%; margin-inline: auto; gap: 10px; padding: 16px 14px; font-size: 14px; }
   .btn-offer .wa-ico { width: 24px; height: 24px; }
   .offer-photos { grid-template-rows: 280px; }
   .offer-photos .frame { min-height: 280px; }
   }
 
-.offer-photos .frame img { object-position: center 60%; }
+.offer-photos .frame img { object-position: center 55%; }
+
+@media (max-width: 380px) { .btn-offer { font-size: 12.5px; padding: 15px 12px; } .btn-offer .chev { display: none; } }
