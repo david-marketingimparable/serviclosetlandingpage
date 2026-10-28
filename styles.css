@@ -290,3 +290,4 @@ h1 em, h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
 }
 .asi-carousel .asi-slide:not(.active) { pointer-events: none; }
 .trio .frame img { aspect-ratio: 1 / 1; object-position: center 45%; }
+@media (min-width: 641px) { #fab-title em { display: block; } .band .glass-center { max-width: 760px; } }
