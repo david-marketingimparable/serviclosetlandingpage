@@ -1,3 +1,5 @@
+/* Fuente de respaldo con las medidas de Montserrat: evita saltos de texto mientras carga la tipografía */
+@font-face { font-family: "Montserrat Fallback"; src: local("Arial"), local("Helvetica"); size-adjust: 112%; ascent-override: 86.6%; descent-override: 22.3%; line-gap-override: 0%; }
 /* Servicloset & Home — diseño premium: minimalista, transparencias y parallax */
 :root {
   --ink: #0e1b2a;
@@ -13,8 +15,8 @@
   --wa: #25d366;
   --wa-dark: #1ebe5a;
   --radius: 18px;
-  --serif: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Montserrat", "Montserrat Fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Montserrat", "Montserrat Fallback", system-ui, -apple-system, "Segoe UI", sans-serif;
   --ease: cubic-bezier(.22, .61, .36, 1);
 }
 
