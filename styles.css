@@ -211,9 +211,13 @@ h1 em, h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
   .brand-mark { width: 40px; height: 40px; }
   .brand-text strong { font-size: 16px; }
   .brand-text span { font-size: 9px; }
-  .hero { min-height: 640px; height: 100svh; max-height: 760px; }
-  .hero-media img { object-position: center bottom; transform: scale(1.55); transform-origin: 50% 100%; }
-  .hero-inner { padding: 110px 0 36px; }
+  /* Celular: la foto completa arriba (sin zoom) y el texto debajo sobre fondo oscuro */
+  .hero { display: block; min-height: 0; height: auto; max-height: none; }
+  .hero-media { position: relative; inset: auto; height: auto; transform: none !important; }
+  .hero-media img { height: auto; aspect-ratio: 4 / 3.1; object-position: center bottom; transform: none; }
+  .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 27, 42, .55) 0%, rgba(14, 27, 42, 0) 30%, rgba(14, 27, 42, 0) 70%, var(--ink) 100%); }
+  .hero::before { display: none; }
+  .hero-inner { position: relative; margin-top: -26px; padding: 0 0 36px; }
   .hero h1 { font-size: 36px; }
   .hero-sub { font-size: 16px; margin-bottom: 24px; }
   .btn-lg { padding: 13px 20px; font-size: 14px; }
