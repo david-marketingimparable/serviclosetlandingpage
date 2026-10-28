@@ -248,3 +248,18 @@ h1 em, h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   [data-reveal], .steps li { opacity: 1; transform: none; }
 }
+
+/* Video: portada idéntica mientras carga el reproductor de Facebook */
+.video { background: #000 url("assets/video-poster.webp") center / cover no-repeat; }
+.video iframe { opacity: 0; transition: opacity .4s ease; }
+.video iframe.ready { opacity: 1; }
+
+/* Solo celular: antes/después con título más grande y menos aire; fabricantes con 3 fotos iguales */
+@media (max-width: 640px) {
+  .sec-light[aria-labelledby="ba-title"] { padding: 56px 0 60px; }
+  #ba-title { font-size: 40px; line-height: 1.08; letter-spacing: -.035em; }
+  .sec-light[aria-labelledby="ba-title"] .sec-head { margin-bottom: 28px; }
+  .trio { grid-template-columns: 1fr; gap: 14px; }
+  .trio .frame:last-child { grid-column: auto; }
+  .trio .frame img { aspect-ratio: 4 / 3; }
+}

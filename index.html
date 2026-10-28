@@ -8,10 +8,12 @@
   <meta name="theme-color" content="#0e1b2a">
   <link rel="icon" type="image/svg+xml" href="logo-servicloset.svg">
   <link rel="preload" as="image" href="assets/hero-900.webp" imagesrcset="assets/hero-900.webp 900w, assets/hero-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preconnect" href="https://www.facebook.com">
+  <link rel="dns-prefetch" href="https://static.xx.fbcdn.net">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="styles.css?v=43">
+  <link rel="stylesheet" href="styles.css?v=44">
 </head>
 <body>
   <header class="site-header">
@@ -140,7 +142,7 @@
             <article class="review" data-reveal><header><span class="avatar" aria-hidden="true">S</span><div><strong>Sarai Martínez</strong><span class="stars" aria-label="5 de 5 estrellas">★★★★★</span></div></header><p>“Me encantó el trato, estoy fascinada con los muebles en mi consultorio. Fueron muy amables, en el showroom tienen muy buena variedad y te resuelven todas tus dudas, excelentes materiales y el precio es justo. Tengo ya 2 años con todos mis muebles del consultorio y lucen como nuevos.”</p></article>
           </div>
           <div class="video" data-reveal>
-            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fservicloset%2Fvideos%2F1480706102564916%2F&show_text=false&width=720&height=720" title="Testimonio en video de un cliente de Servicloset" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <iframe data-src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fservicloset%2Fvideos%2F1480706102564916%2F&show_text=false&width=720&height=720" title="Testimonio en video de un cliente de Servicloset" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             <span class="fb-shield fb-shield-top" aria-hidden="true"></span><span class="fb-shield fb-shield-corner" aria-hidden="true"></span>
           </div>
         </div>
@@ -212,6 +214,13 @@
         addEventListener("scroll", () => { if (!tick) { tick = true; requestAnimationFrame(run); } }, { passive: true });
         run();
       }
+
+      // Video de Facebook: se carga con anticipación (antes de llegar a la sección) y se muestra
+      // sobre una portada idéntica, para que no aparezca la pantalla negra mientras carga
+      const vf = document.querySelector(".video iframe");
+      const loadVideo = () => { if (!vf.src) { vf.addEventListener("load", () => vf.classList.add("ready"), { once: true }); vf.src = vf.dataset.src; } };
+      new IntersectionObserver(([e], o) => { if (e.isIntersecting) { loadVideo(); o.disconnect(); } }, { rootMargin: "1500px 0px" }).observe(vf);
+      setTimeout(loadVideo, 4000);
 
       // Línea de tiempo animada
       const steps = document.querySelector(".steps");
