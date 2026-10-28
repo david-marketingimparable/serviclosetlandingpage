@@ -326,3 +326,5 @@ h1 em, h2 em { font-style: normal; font-weight: 700; color: var(--gold); }
   .offer-photos .frame { min-height: 280px; }
   .offer-photos::before { background: linear-gradient(180deg, #0c3052 0%, rgba(12, 48, 82, .7) 18%, transparent 42%); }
 }
+
+.offer-photos .frame img { object-position: center 60%; }
